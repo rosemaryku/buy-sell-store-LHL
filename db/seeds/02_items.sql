@@ -53,3 +53,31 @@ VALUES (3, 'Igglybuff', 3, 10000, 'Igglybuff loves to sing. Its marshmallow-like
 
 INSERT INTO items ('owner_id', 'title', 'quantity', 'price_per_item', 'description', 'picture_url', 'posted_at', 'sold', 'sold_date', 'active')
 VALUES (4, 'Skitty', 1, 20000, 'Skitty has the habit of becoming fascinated by moving objects and chasing them around. This Pokémon is known to chase after its own tail and become dizzy.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/300.png', 11/02/2022, FALSE, null, TRUE);
+
+INSERT INTO items ('owner_id', 'title', 'quantity', 'price_per_item', 'description', 'picture_url', 'posted_at', 'sold', 'sold_date', 'active')
+VALUES(6, 'Porygon', 1, 9999, 'State-of-the-art technology was used to create Porygon. It was the first artificial Pokémon to be created via computer programming.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/137.png', 13/03/2022, FALSE, null, TRUE);
+
+INSERT INTO items ('owner_id', 'title', 'quantity', 'price_per_item', 'description', 'picture_url', 'posted_at', 'sold', 'sold_date', 'active')
+VALUES(7, 'Porygon2', 2, 8888, 'This is a Porygon that was updated with special data. Porygon2 develops itself by learning about many different subjects all on its own.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/233.png', 11/02/2022, FALSE, null, TRUE);
+
+INSERT INTO items ('owner_id', 'title', 'quantity', 'price_per_item', 'description', 'picture_url', 'posted_at', 'sold', 'sold_date', 'active')
+VALUES(8, 'PorygonZ', 3, 7777, 'Porygon-Z had a program installed to allow it to move between dimensions, but the program also caused instability in Porygon-Z’s behavior.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/474.png', 14/03/2022, FALSE , null, TRUE);
+
+INSERT INTO items ('owner_id', 'title', 'quantity', 'price_per_item', 'description', 'picture_url', 'posted_at', 'sold', 'sold_date', 'active')
+VALUES(1, 'Cyndaquil', 1, 6578, 'Cyndaquil protects itself by flaring up the flames on its back. The flames are vigorous if the Pokémon is angry. However, if it is tired, the flames splutter fitfully with incomplete combustion.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/155.png', 11/02/2022, FALSE, null, TRUE);
+
+INSERT INTO items ('owner_id', 'title', 'quantity', 'price_per_item', 'description', 'picture_url', 'posted_at', 'sold', 'sold_date', 'active')
+VALUES(2, 'Gyarados', 1, 6969, 'It has an extremely aggressive nature. The Hyper Beam it shoots from its mouth totally incinerates all targets.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/130.png', 15/03/2022, FALSE, null, TRUE);
+
+INSERT INTO items ('owner_id', 'title', 'quantity', 'price_per_item', 'description', 'picture_url', 'posted_at', 'sold', 'sold_date', 'active')
+VALUES(5, 'Magikarp', 55, 100, 'It is virtually worthless in terms of both power and speed. It is the most weak and pathetic Pokémon in the world.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/129.png', 11/02/2022, FALSE, null, TRUE);
+
+INSERT INTO items ('owner_id', 'title', 'quantity', 'price_per_item', 'description', 'picture_url', 'posted_at', 'sold', 'sold_date', 'active')
+VALUES(9, 'Gengar', 1, 9000, 'On the night of a full moon, if shadows move on their own and laugh, it must be Gengar’s doing.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/094.png', 16/03/2022, FALSE, null, TRUE);
+
+INSERT INTO items ('owner_id', 'title', 'quantity', 'price_per_item', 'description', 'picture_url', 'posted_at', 'sold', 'sold_date', 'active')
+VALUES(3, 'Dugtrio', 2, 1000, 'A team of Diglett triplets. It triggers huge earthquakes by burrowing 60 miles underground.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/051.png', 11/02/2022, FALSE, null, TRUE);
+
+INSERT INTO items ('owner_id', 'title', 'quantity', 'price_per_item', 'description', 'picture_url', 'posted_at', 'sold', 'sold_date', 'active')
+VALUES(9, 'Rayquaza', 1, 99999, 'Rayquaza is said to have lived for hundreds of millions of years. Legends remain of how it put to rest the clash between Kyogre and Groudon.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/384.png', 17/03/2022, FALSE, null, TRUE);
+
