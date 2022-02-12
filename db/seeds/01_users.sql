@@ -1,6 +1,6 @@
 -- Users table seeds here (Example)
 INSERT INTO users (name, email, password, phone_number)
-VALUES ;
+VALUES
 ('Ash Ketchum', 'ash@gmail.com', '1234', 6477879090)
 ('Misty', 'misty@gmail.com', '1234', 6477879030)
 ('Brock', 'brock@gmail.com', '1234', 6477878970)
@@ -9,4 +9,4 @@ VALUES ;
 ('James', 'james@gmail.com', '1234', 6477878790)
 ('Lt. Surge', 'shockemall@gmail.com', '1234' 3424443542)
 ('Sabrina', 'saffronsab@gmail.com', '1234' 5382940144)
-('Blaine', 'coder4life@email.com', '1234' 4256346322)
+('Blaine', 'coder4life@email.com', '1234' 4256346322);
