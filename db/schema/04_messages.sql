@@ -6,4 +6,4 @@ CREATE TABLE messages (
   item_id INTEGER REFERENCES items(id) on DELETE CASCADE,
   user_message VARCHAR(255),
   sent_at TIMESTAMP
-);
+)
