@@ -8,8 +8,7 @@ CREATE TABLE items (
   price_per_item INTEGER NOT NULL DEFAULT 0,
   description TEXT NOT NULL,
   picture_url VARCHAR(255) NOT NULL,
-  posted_at TIMESTAMP NOT NULL,
+  posted_at DATE NOT NULL,
   sold BOOLEAN NOT NULL DEFAULT FALSE,
-  sold_date TIMESTAMP,
   active BOOLEAN NOT NULL DEFAULT TRUE
 );
