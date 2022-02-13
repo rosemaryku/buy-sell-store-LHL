@@ -52,6 +52,15 @@ app.get("/", (req, res) => {
   res.render("example");
 });
 
+app.get("/user/:id/favourites", (req, res) => {
+  res.render("users_favourites");
+});
+
+app.get("/user/:id/listings", (req, res) => {
+  res.render("users_id_listings");
+});
+
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
