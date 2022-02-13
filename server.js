@@ -52,6 +52,13 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+//Olga's Pages//.....................................................................................
+
+//GET // HOME //...........................................................................................
+app.get("/home", (req, res) => {
+  res.render("index_pbm");
+});
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

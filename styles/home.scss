@@ -1,0 +1,97 @@
+$color-red: #FF0000;
+
+body {
+display: flex;
+width: 100%;
+justify-content: center;
+
+}
+
+.master {
+width: 95rem;
+background-color: $color-red;
+position: absolute;
+background-color: black;
+
+}
+
+.classy-article {
+  width: 100%;
+  display:flex;
+  justify-content: center;
+}
+.container-carousel {
+
+
+  position: relative;
+  background-color: azure;
+  display: flex;
+  align-content: space-between;
+  justify-content: space-between;
+  width: 100%;
+}
+
+section {
+  padding: 2em 0;
+  background-color: aquamarine;
+}
+
+.featured {
+  width: 20%;
+  background-color: $color-red;
+  border-radius: 10px;
+  padding: 4em 0;
+}
+.featured:hover {
+  filter: drop-shadow(10px 10px 4px black);
+}
+
+.carouselExampleControls {
+width: 50%;
+}
+
+.title-text {
+  justify-content:flex-start;
+  font-weight:bolder;
+  background-color: azure;
+}
+.title-text>h1 {
+  margin: 0;
+}
+
+.text-field-styling {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  background-color: azure;
+}
+
+.spanny-search {
+  width: 30rem;
+
+}
+
+.input-group>.form-control {
+  height: 3rem;
+  background-color: azure;
+
+}
+
+.olgabutton {
+  font-size:larger;
+
+}
+
+.wide-10 {
+  width: 10rem;
+}
+
+.azure {
+  color: azure;
+}
+
+
+
+
+
