@@ -37,15 +37,18 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
+const apiItemsRoutes = require("./routes/items_api");
 const itemsNewRoutes = require("./routes/items_new");
 const itemsIdRoutes = require("./routes/items_id");
-
+//
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+app.use("/api/items", apiItemsRoutes(db));
 app.use("/items/new", itemsNewRoutes(db));
-app.use("/items/:id", itemsIdRoutes(db));
+app.use("/items", itemsIdRoutes(db));
+// app.use("/items", itemsRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
@@ -56,17 +59,6 @@ app.use("/items/:id", itemsIdRoutes(db));
 app.get("/", (req, res) => {
   res.render("index");
 });
-
-// New pokemon page
-app.get("/items_new", (req, res) => {
-  res.render("items_new");
-})
-
-// Specific pokemon page
-app.get("/items/:id", (req, res) => {
-  res.render("items_id");
-})
-
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

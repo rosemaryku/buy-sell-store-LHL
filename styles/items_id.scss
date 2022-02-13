@@ -15,6 +15,12 @@ main {
   display: flex;
   flex-direction: column;
   margin-right:40px;
+  text-align: center;
+}
+
+#poke-pic {
+  width: 350px;
+  padding: 1em;
 }
 
 .poke-name {
@@ -29,13 +35,24 @@ main {
   flex-direction: column;
 }
 
+.top-right-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .fa-heart {
   size: 200%;
   margin-left: 10px;
+  // color: #b40c0c;
 }
 
+.favourited {
+  color:#dd2525;
+}
+
+
 .fa-heart:hover {
-  color: #b40c0c;
+  color: #dd2525;
   cursor: pointer;
 }
 

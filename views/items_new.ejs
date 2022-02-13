@@ -7,15 +7,20 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/items_new.css" type="text/css" />
 
-    <title>Post New Pokemon</title>
+    <!-- App JS -->
+   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+   <script type="text/javascript" src="/scripts/items.js"></script>
+
+  <title>Post New Pokemon</title>
 
   </head>
 
   <body>
-    <!-- TODO - Input EJS for partials/nav bar  -->
+    <!-- TODO - Input partials/nav bar  -->
     <main>
 
       <h3>Post New Pokemon</h3>
@@ -52,7 +57,6 @@
             <div class="form-group row">
               <label for="description" class="col-sm-2 col-form-label">Description:</label>
               <div class="col-sm-10">
-                <!-- <input type="text" class="form-control" id="description"> -->
                 <textarea name="descriptionTextArea" class="form-control" id="description" rows="3"></textarea>
               </div>
             </div>
@@ -62,8 +66,7 @@
             </div>
           </form>
 
-        </div>
-      </form>
+
     </main>
 
     <!-- Bootstrap JS -->

@@ -7,7 +7,10 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Font awesome for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -16,13 +19,16 @@
       referrerpolicy="no-referrer"
     />
 
+  <!-- App CSS -->
+   <link rel="stylesheet" href="/styles/items_id.css" type="text/css" />
 
-    <link rel="stylesheet" href="/styles/items_id.css" type="text/css" />
+  <!-- App JS -->
+   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+   <script type="text/javascript" src="/scripts/items.js"></script>
 
-    <title>Pokemon Page</title>
 
+  <title>Pokemon Page</title>
   </head>
-
   <body>
     <!-- TODO - Input EJS for partials/nav bar  -->
     <main>
@@ -30,23 +36,37 @@
 
       <div class="pokemon-container">
         <div class="left-container">
-          <span><img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png" alt="Bulbasaur">
-          </span>
+
+          <% if (items[itemId-1].sold) { %>
+          <span id=soldMarker> <b>SOLD</b> </span>
+          <% } %>
+
+          <span><img id="poke-pic"
+            src= <%= items[itemId-1].picture_url %>
+           alt="Bulbasaur">
+        </span>
+
           <div class="poke-name">
-            <span>Bulbasaur</span>
-             <i class="fa-solid fa-heart"></i>
+            <span><%= items[itemId-1].title %>
+
+            </span>
+            <!-- <button class="favourite-btn"> -->
+              <i class="fa-solid fa-heart"></i>
+            <!-- </button> -->
           </div>
         </div>
 
-
         <div class="right-container">
-           <p> <b>Price:</b> $10</p>
-           <p> <b> Quantity:</b> 1</p>
-           <p> <b> Description: </b>There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.</p>
-           <p> <b> Seller Name:</b> Ash Ketchum</p>
-           <p> <b> Seller Phone Number:</b> 6477879090</p>
-           <p> <b> Posted At:</b> 01/10/2021</p>
-           <p><b> Seller Email: </b>ash@gmail.com</p>
+          <div class="top-right-container">
+            <p> <b>Price: </b> $<%= items[itemId-1].price_per_item / 100 %> </p>
+            <p> <b>Posted On:</b> <%=  (items[itemId-1].posted_at).toISOString().slice(0, 10); %></p>
+          </div>
+
+           <p> <b> Quantity:</b> <%= items[itemId-1].quantity %></p>
+           <p> <b> Description: </b> <%= items[itemId-1].description %> </p>
+           <p> <b> Seller Name: </b> <%= items[itemId-1].name %>  </p>
+           <p> <b> Seller Phone Number:</b> <%= items[itemId-1].phone_number %> </p>
+           <p><b> Seller Email: </b> <%= items[itemId-1].email %> </p>
            <!-- TODO May need to revise route  -->
            <form action="/messages" method="POST">
               <textarea name="message" class="form-control" id="message" rows="2" placeholder="Message to seller"></textarea>
