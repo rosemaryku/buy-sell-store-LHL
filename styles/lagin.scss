@@ -8,6 +8,14 @@ body {
   justify-content: center;
 
 }
+
+.center-main {
+  align-items: center;
+  justify-content:space-around;
+  padding: 2em 4em;
+  background-color: white;
+}
+
 .center {
   align-items: center;
   // margin: 1em;
@@ -24,6 +32,7 @@ background-color: rgb(168, 29, 29);
 align-content: center;
 justify-content: center;
 width: 100%;
+// margin: 1em;
 }
 
 .center-img {
@@ -44,15 +53,17 @@ justify-content: space-around;
 }
 
 img {
-background-color: aqua;
+background-color: rgb(255, 0, 0);
 justify-content: center;
 align-items: center;
 width: 25em;
+margin-right: 2em;
 
 }
 input {
   height: 3em;
   width: 100%;
+
 
 }
 button {
@@ -60,4 +71,10 @@ background-color: aqua;
 justify-content: center;
 align-items: center;
 width: 13em;
+}
+
+.override {
+
+  align-items: center;
+  justify-content: center;
 }
