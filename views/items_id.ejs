@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+
+    <link rel="stylesheet" href="/styles/items_id.css" type="text/css" />
+
+    <title>Pokemon Page</title>
+
+  </head>
+
+  <body>
+    <!-- TODO - Input EJS for partials/nav bar  -->
+    <main>
+      <h3>Specific Pokemon Page   </h3>
+
+      <div class="pokemon-container">
+        <div class="left-container">
+          <span><img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png" alt="Bulbasaur">
+          </span>
+          <div class="poke-name">
+            <span>Bulbasaur</span>
+             <i class="fa-solid fa-heart"></i>
+          </div>
+        </div>
+
+
+        <div class="right-container">
+           <p> <b>Price:</b> $10</p>
+           <p> <b> Quantity:</b> 1</p>
+           <p> <b> Description: </b>There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.</p>
+           <p> <b> Seller Name:</b> Ash Ketchum</p>
+           <p> <b> Seller Phone Number:</b> 6477879090</p>
+           <p> <b> Posted At:</b> 01/10/2021</p>
+           <p><b> Seller Email: </b>ash@gmail.com</p>
+           <!-- TODO May need to revise route  -->
+           <form action="/messages" method="POST">
+              <textarea name="message" class="form-control" id="message" rows="2" placeholder="Message to seller"></textarea>
+              <div class="my-2">
+                <button type="submit" class="btn btn-primary mb-2">Send</button>
+              </div>
+          </form>
+        </div>
+       </div>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>

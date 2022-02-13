@@ -1,0 +1,41 @@
+main {
+  margin: 10em 5em;
+  padding: 5em 10em;
+}
+
+.pokemon-container {
+  padding: 2em 3em;
+  background-color: #e9e7e7;
+  display: flex;
+  flex-direction: rows;
+  align-content: space-between;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  margin-right:40px;
+}
+
+.poke-name {
+  display: flex;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.fa-heart {
+  size: 200%;
+  margin-left: 10px;
+}
+
+.fa-heart:hover {
+  color: #b40c0c;
+  cursor: pointer;
+}
+
