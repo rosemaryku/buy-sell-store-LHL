@@ -1,23 +1,63 @@
 body {
-  display: flex;
+  // display: flex;
   width: 100%;
+  justify-content: center;
+  background-color: rgb(212, 82, 82);
+  display: flex;
+
   justify-content: center;
 
 }
+.center {
+  align-items: center;
+  // margin: 1em;
 
-.master {
-  width: 95rem;
-  background-color: red;
-  position: absolute;
-  background-color: black;
+
+  justify-content: center;
+  padding: 2em 4em;
+  background-color: rgb(0, 0, 0);
+}
+
+.center-input {
+display:flex;
+background-color: rgb(168, 29, 29);
+align-content: center;
+justify-content: center;
+width: 100%;
+}
+
+.center-img {
+height: 40em;
+justify-content: center;
+align-items: center;
+display: flex;
+background-color: white;
+}
+
+.master-main {
+width: 90%;
+background-color: white;
+display: flex;
+align-items: center;
+justify-content: space-around;
 
 }
-.container-carousel {
 
-  position: relative;
-  background-color: azure;
-  display: flex;
-  align-content: space-between;
-  justify-content: space-between;
+img {
+background-color: aqua;
+justify-content: center;
+align-items: center;
+width: 25em;
+
+}
+input {
+  height: 3em;
   width: 100%;
+
+}
+button {
+background-color: aqua;
+justify-content: center;
+align-items: center;
+width: 13em;
 }
