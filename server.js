@@ -37,11 +37,16 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
-
+const apiItemsRoutes = require("./routes/items_api");
+const usersIdFavouritesRoutes = require("./routes/users_id_favourites");
+const usersIdListingsRoutes = require("./routes/users_id_listings");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+app.use("/api/items", apiItemsRoutes(db));
+app.use("/users/:id/listings", usersIdListingsRoutes(db));
+app.use("/users/:id/favourites", usersIdFavouritesRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -52,12 +57,16 @@ app.get("/", (req, res) => {
   res.render("example");
 });
 
-app.get("/user/:id/favourites", (req, res) => {
-  res.render("users_favourites");
-});
+// app.get("/users/:id/favourites", (req, res) => {
+//   res.render("users_favourites");
+// });
 
-app.get("/user/:id/listings", (req, res) => {
-  res.render("users_id_listings");
+// app.get("/users/:id/listings", (req, res) => {
+//   res.render("users_id_listings");
+// });
+
+app.get("/users/:id/messages", (req, res) => {
+  res.render("users_id_messages");
 });
 
 
