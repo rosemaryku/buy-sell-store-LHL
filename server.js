@@ -58,6 +58,10 @@ app.get("/", (req, res) => {
 app.get("/home", (req, res) => {
   res.render("index_pbm");
 });
+//GET // LOGIN //...........................................................................................
+app.get("/login", (req, res) => {
+  res.render("login");
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

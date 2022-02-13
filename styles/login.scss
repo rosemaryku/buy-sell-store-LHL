@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+}
+
+.master {
+  width: 95rem;
+  background-color: $color-red;
+  position: absolute;
+  background-color: black;
+
+}
+.container-carousel {
+
+  position: relative;
+  background-color: azure;
+  display: flex;
+  align-content: space-between;
+  justify-content: space-between;
+  width: 100%;
+}
