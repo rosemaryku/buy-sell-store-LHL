@@ -43,6 +43,9 @@ const itemsIdRoutes = require("./routes/items_id");
 const usersIdFavouritesRoutes = require("./routes/users_id_favourites");
 const usersIdListingsRoutes = require("./routes/users_id_listings");
 const usersIdMessagesRoutes = require("./routes/users_id_messages");
+const homeRoutes = require("./routes/home");
+const loginRoutes = require("./routes/login");
+const registerRoutes = require("./routes/register");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -51,10 +54,12 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/items", apiItemsRoutes(db));
 app.use("/items/new", itemsNewRoutes(db));
 app.use("/items", itemsIdRoutes(db));
-
 app.use("/users/:id/listings", usersIdListingsRoutes(db));
 app.use("/users/:id/favourites", usersIdFavouritesRoutes(db));
 app.use("/users/:id/messages", usersIdMessagesRoutes(db));
+app.use("/home", homeRoutes(db));
+app.use("/login", loginRoutes(db));
+app.use("/register", registerRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
