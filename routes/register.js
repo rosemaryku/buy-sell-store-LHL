@@ -10,7 +10,7 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    res.render("index_pbm")
+    res.render("register")
   });
   return router;
 };
