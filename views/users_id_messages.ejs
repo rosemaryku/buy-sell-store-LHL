@@ -29,8 +29,8 @@
   <h1>Your Messages</h1>
   <section class='messages'>
   <div class='messages-container-left'>
-    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/051.png" alt="Dugtrio">
-    <h2>Dugtrio</h2>
+    <img src="<%= items[0].picture_url%>" alt="Dugtrio">
+    <h2><%= items[0].title%></h2>
   </div>
   <div class='messages-container-right'>
     <form class="messages-text-box" action="/users/:id/messages/" method="POST">
