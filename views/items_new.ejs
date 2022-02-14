@@ -25,40 +25,40 @@
 
     <main>
       <h3>Post New Pokemon</h3>
-      <form class="form-inline-block" action="/items" method="POST">
+      <form class="form-inline-block" action="/items/new" method="POST">
 
             <div class="form-group row">
               <label for="pokemonName" class="col-sm-2 col-form-label">Pokemon Name:</label>
               <div class="col-sm-6">
-                <input type="text" class="form-control" id="pokemonName">
+                <input type="text" class="form-control" name="name">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="price" class="col-sm-2 col-form-label">Price:</label>
               <div class="col-sm-4">
-                <input type="number" class="form-control" id="price">
+                <input type="number" class="form-control" name="price">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="quantity" class="col-sm-2 col-form-label">Quantity:</label>
               <div class="col-sm-4">
-                <input type="number" class="form-control" id="quantity">
+              <input type="number" class="form-control" name="quantity">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="imageUrl" class="col-sm-2 col-form-label">Image URL:</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="imageURL">
+                <input type="text" class="form-control" name="imageUrl">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="description" class="col-sm-2 col-form-label">Description:</label>
               <div class="col-sm-10">
-                <textarea name="descriptionTextArea" class="form-control" id="description" rows="3"></textarea>
+                <textarea name="desc" class="form-control" rows="3"></textarea>
               </div>
             </div>
 
