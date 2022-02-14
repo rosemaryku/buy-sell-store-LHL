@@ -8,5 +8,6 @@ CREATE TABLE users (
   password VARCHAR(255) NOT NULL,
   phone_number VARCHAR(10),
   favourite_items INTEGER REFERENCES items(id) on DELETE CASCADE,
-  messages_id INTEGER REFERENCES messages(id) on DELETE CASCADE
+  messages_id INTEGER REFERENCES messages(id) on DELETE CASCADE,
+  listings_id INTEGER
 );

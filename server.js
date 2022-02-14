@@ -54,7 +54,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/items", apiItemsRoutes(db));
 app.use("/items/new", itemsNewRoutes(db));
 app.use("/items", itemsIdRoutes(db));
-app.use("/users/:id/listings", usersIdListingsRoutes(db));
+app.use("/users", usersIdListingsRoutes(db));
 app.use("/users", usersIdFavouritesRoutes(db));
 app.use("/users/:id/messages", usersIdMessagesRoutes(db));
 app.use("/home", homeRoutes(db));

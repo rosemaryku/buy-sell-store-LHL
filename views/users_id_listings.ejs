@@ -29,17 +29,24 @@
   <h1>Your Listings</h1>
   <section class='listings-strip'>
     <ul class='listings-ul'>
-      <li><form method="POST" action="/users/:id/listings/mark-sold">
+      <% for(var i=0; i<items.length; i++) {%>
+        <li class='listings-li'>
+          <div>
+            <form method="POST" action="/users/:id/listings/mark-sold">
               <button type="submit" class="btn btn-primary">Mark Sold</button>
-            </form></li>
-        <li><img class ="pokemon-small" src="<%= items[0].picture_url%>" alt="Bulbasaur"></li>
-        <li>$<%= items[0].price_per_item%></li>
-        <li><%= items[0].title%></li>
-        <li><%= items[0].quantity%> in stock</li>
-        <li><%=  (items[0].posted_at).toISOString().slice(0, 10); %></li>
-        <li><form method="POST" action="/users/:id/listings/delete">
+            </form>
+          </div>
+          <div><img class ="pokemon-small" src="<%= items[i].picture_url%>" alt=""></div>
+          <div>$<%= items[i].price_per_item%></div>
+          <div><%= items[i].title%></div>
+          <div><%= items[i].quantity%> in stock</div>
+          <div>
+            <form method="POST" action="/users/:id/listings/delete">
               <button type="submit" class="btn btn-primary">Delete</button>
-            </form></li>
-      </ul>
+            </form>
+          </div>
+        </li>
+      <% } %>
+    </ul>
   </section>
 </body>
