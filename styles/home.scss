@@ -22,7 +22,6 @@ background-color: black;
 }
 .container-carousel {
 
-
   position: relative;
   background-color: azure;
   display: flex;
@@ -90,8 +89,14 @@ width: 50%;
 .azure {
   color: azure;
 }
+//remove spaces for specificity
+// .carousel-item.active.horizontal-align {
+//   display:flex;
+// }
 
-
+.horizontal-align {
+  display: flex;
+}
 
 
 

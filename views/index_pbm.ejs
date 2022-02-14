@@ -41,49 +41,32 @@
 
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active ">
-                <img class="d-block centered_single_item"
-                src= <%= items[itemID].picture_url %>
-                >
-              </div>
-              <div class="carousel-item centered_single_item">
-                <img class="d-block "
-                src= <%= items[itemID + 1].picture_url %>
-                >
-              </div>
-              <div class="carousel-item centered_single_item">
-                <img class="d-block " src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/132.png" alt="Third slide">
-              </div>
+              <% for (let i =0; i < Math.floor(items.length/3); i++) { %>
+
+                <% if (i === 0) { %>
+                  <div class="carousel-item active">
+                <% } else { %>
+                  <div class="carousel-item">
+                <% } %>
+
+                  <div class="horizontal-align">
+                    <img class="d-block "
+                    src=<%= items[0 + 3*i].picture_url %>
+                    alt=<%= items[0 + 3*i].title %>
+                    >
+                    <img class="d-block centered_single_item"
+                    src=<%= items[1 + 3*i].picture_url %>
+                    >
+                    <img class="d-block "
+                    src=<%= items[2 + 3*i].picture_url %>
+                    >
+                  </div>
+                </div>
+
+                <% } %>
             </div>
           </div>
 
-          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active ">
-                <img class="d-block centered_single_item" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/162.png" alt="First slide">
-              </div>
-              <div class="carousel-item centered_single_item">
-                <img class="d-block " src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/137.png" alt="Second slide">
-              </div>
-              <div class="carousel-item centered_single_item">
-                <img class="d-block " src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/155.png" alt="Third slide">
-              </div>
-            </div>
-          </div>
-
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active ">
-              <img class="d-block centered_single_item" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/174.png" alt="First slide">
-            </div>
-            <div class="carousel-item centered_single_item">
-              <img class="d-block " src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/094.png" alt="Second slide">
-            </div>
-            <div class="carousel-item centered_single_item">
-              <img class="d-block " src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/384.png" alt="Third slide">
-            </div>
-          </div>
-        </div>
 
       </article>
       <!-- FEATURED POKEMON ...........................................................................-->

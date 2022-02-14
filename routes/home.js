@@ -24,19 +24,15 @@ module.exports = (db) => {
     console.log("data:", data.rows);
     const items = data.rows;
     console.log("ITEMS:", items);
-    // const newID = (items) => {
-    //   let id = 0;
-    //   for (let i = 0; i < items.length; i++) {
-    //     id = i;
-    //   }
-    // return id
-    // }
-    // console.log("loop", newID(items))
+
     console.log("URL:", items[0].picture_url);
+    let sorted = () => {};
     const templateVars = {
       items: items,
-      itemID: 1
+      itemID: 1,
+      sortedItems: sorted
     }
+
     res.render("index_pbm", templateVars);
     })
     .catch(err => {
