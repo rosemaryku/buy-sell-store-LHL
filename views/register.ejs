@@ -12,25 +12,29 @@
 
     <title>Black Market Pokemon</title>
   </head>
-  <body class="center-main">
+  <body>
+    <%- include('partials/nav_bar') %>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <main class="master-main center-main">
-      <div class="center-img">
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/079.png" alt="">
-      </div>
+    <main >
+      <div class="master-main center-main">
 
-      <div class="center">
+        <div class="center-img">
+          <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/079.png" alt="">
+        </div>
 
-      <br>
-      <div class="center-input">
-        <input type="text" placeholder="NAME">
-      </div>
-      <br>
-      <div class="center-input">
-        <input type="text" placeholder="EMAIL">
-      </div>
-      <br>
-      <div class="center-input">
+        <div class="center">
+
+          <br>
+          <div class="center-input">
+            <input type="text" placeholder="NAME">
+          </div>
+          <br>
+          <div class="center-input">
+            <input type="text" placeholder="EMAIL">
+          </div>
+          <br>
+          <div class="center-input">
         <input type="text" placeholder="PASSWORD">
       </div>
       <br>
@@ -41,6 +45,7 @@
       <div class="center">
         <button type="button" class="btn btn-primary">Register</button>
       </div>
+    </div>
     </main>
 
 
