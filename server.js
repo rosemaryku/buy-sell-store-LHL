@@ -40,7 +40,10 @@ const widgetsRoutes = require("./routes/widgets");
 const apiItemsRoutes = require("./routes/items_api");
 const itemsNewRoutes = require("./routes/items_new");
 const itemsIdRoutes = require("./routes/items_id");
-//
+const usersIdFavouritesRoutes = require("./routes/users_id_favourites");
+const usersIdListingsRoutes = require("./routes/users_id_listings");
+const usersIdMessagesRoutes = require("./routes/users_id_messages");
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -49,6 +52,9 @@ app.use("/api/items", apiItemsRoutes(db));
 app.use("/items/new", itemsNewRoutes(db));
 app.use("/items", itemsIdRoutes(db));
 
+app.use("/users/:id/listings", usersIdListingsRoutes(db));
+app.use("/users/:id/favourites", usersIdFavouritesRoutes(db));
+app.use("/users/:id/messages", usersIdMessagesRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -56,8 +62,21 @@ app.use("/items", itemsIdRoutes(db));
 // Separate them into separate routes files (see above).
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("example");
 });
+
+// app.get("/users/:id/favourites", (req, res) => {
+//   res.render("users_favourites");
+// });
+
+// app.get("/users/:id/listings", (req, res) => {
+//   res.render("users_id_listings");
+// });
+
+// app.get("/users/:id/messages", (req, res) => {
+//   res.render("users_id_messages");
+// });
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

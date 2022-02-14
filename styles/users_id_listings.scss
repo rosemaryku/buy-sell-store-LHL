@@ -1,0 +1,12 @@
+body {
+ul.listings-ul {
+  border-style: double;
+  display:flex;
+  justify-content: space-around;
+  list-style-type: none;
+  align-items: center;
+}
+img.pokemon-small {
+  height: 64px;
+}
+}
