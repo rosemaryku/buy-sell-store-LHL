@@ -5,13 +5,15 @@ module.exports = (db) => {
 
  router.get("/:id", (req, res) => {
   // TODO edit to to prevent SQL injection
-  db.query(`SELECT * FROM items JOIN users ON owner_id = users.id;`)
+  const queryStr = `SELECT * FROM items JOIN users ON owner_id = users.id WHERE items.id = $1 ;`
+  const values = [req.params.id];
+  db.query(queryStr, values)
   .then(data => {
-    const items = data.rows;
+    const specificItem = data.rows[0];
+    console.log(specificItem);
     // console.log("ID:", req.params.id);
     const templateVars = {
-      items: items,
-      itemId: req.params.id
+      specificItem: specificItem,
     }
     res.render("items_id", templateVars);
     })
