@@ -19,11 +19,20 @@ module.exports = (db) => {
 
   router.get("/", (req, res) => {
    // TODO edit to to prevent SQL injection
-  db.query(`SELECT * FROM items`)
+  db.query(`SELECT * FROM items ORDER BY posted_at DESC;`)
   .then(data => {
     console.log("data:", data.rows);
     const items = data.rows;
-    console.log("URL:", items[2].picture_url);
+    console.log("ITEMS:", items);
+    // const newID = (items) => {
+    //   let id = 0;
+    //   for (let i = 0; i < items.length; i++) {
+    //     id = i;
+    //   }
+    // return id
+    // }
+    // console.log("loop", newID(items))
+    console.log("URL:", items[0].picture_url);
     const templateVars = {
       items: items,
       itemID: 1
