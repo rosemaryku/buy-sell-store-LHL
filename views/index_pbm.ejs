@@ -13,56 +13,59 @@
     <title>Black Market Pokemon</title>
   </head>
   <body>
-
+    <%- include('partials/nav_bar') %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <!-- SEARCH BAR AND FILTER .........................................................-->
-    <main class="master">
-      <article class="text-field-styling">
-        <div class="input-group spanny-search">
+    <main>
+      <div class="master">
+
+        <article class="text-field-styling">
+          <div class="input-group spanny-search">
             <input type="text" aria-label="" placeholder="Search" class="form-control text-field-styling olgabutton">
-        </div>
-        <div class="btn-group wide-10">
-          <button type="button" class="btn btn-danger dropdown-toggle olgabutton wide-10 " data-bs-toggle="dropdown" aria-expanded="false">
-            Filter
-          </button>
-          <ul class="dropdown-menu wide-10">
-            <li><a class="dropdown-item " href="#">Price: Lowest</a></li>
-            <li><a class="dropdown-item " href="#">Price: Highest</a></li>
-            <li><a class="dropdown-item " href="#">Newest: First</a></li>
-            <li><a class="dropdown-item " href="#">Oldest: First</a></li>
-          </ul>
-        </div>
-      </article>
+          </div>
+          <div class="btn-group wide-10">
+            <button type="button" class="btn btn-danger dropdown-toggle olgabutton wide-10 " data-bs-toggle="dropdown" aria-expanded="false">
+              Filter
+            </button>
+            <ul class="dropdown-menu wide-10">
+              <li><a class="dropdown-item " href="#">Price: Lowest</a></li>
+              <li><a class="dropdown-item " href="#">Price: Highest</a></li>
+              <li><a class="dropdown-item " href="#">Newest: First</a></li>
+              <li><a class="dropdown-item " href="#">Oldest: First</a></li>
+            </ul>
+          </div>
+        </article>
 
-<!-- CAROUSEL ........................................................................-->
-      <article class="classy-article">
+        <!-- CAROUSEL ........................................................................-->
+        <article class="classy-article">
 
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active ">
-              <img class="d-block centered_single_item" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="First slide">
-            </div>
-            <div class="carousel-item centered_single_item">
-              <img class="d-block " src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="Second slide">
-            </div>
-            <div class="carousel-item centered_single_item">
-              <img class="d-block " src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/132.png" alt="Third slide">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active ">
+                <img class="d-block centered_single_item" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="First slide">
+              </div>
+              <div class="carousel-item centered_single_item">
+                <img class="d-block " src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="Second slide">
+              </div>
+              <div class="carousel-item centered_single_item">
+                <img class="d-block " src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/132.png" alt="Third slide">
+              </div>
             </div>
           </div>
-        </div>
 
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active ">
-              <img class="d-block centered_single_item" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/162.png" alt="First slide">
-            </div>
-            <div class="carousel-item centered_single_item">
-              <img class="d-block " src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/137.png" alt="Second slide">
-            </div>
-            <div class="carousel-item centered_single_item">
-              <img class="d-block " src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/155.png" alt="Third slide">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active ">
+                <img class="d-block centered_single_item" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/162.png" alt="First slide">
+              </div>
+              <div class="carousel-item centered_single_item">
+                <img class="d-block " src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/137.png" alt="Second slide">
+              </div>
+              <div class="carousel-item centered_single_item">
+                <img class="d-block " src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/155.png" alt="Third slide">
+              </div>
             </div>
           </div>
-        </div>
 
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
@@ -78,18 +81,19 @@
           </div>
         </div>
 
-    </article>
-<!-- FEATURED POKEMON ...........................................................................-->
-    <section class="title-text">
-      <h1 class="title-text">Featured Pokemon</h1>
-    </section>
+      </article>
+      <!-- FEATURED POKEMON ...........................................................................-->
+      <section class="title-text">
+        <h1 class="title-text">Featured Pokemon</h1>
+      </section>
 <!-- FEATURED PICTURES ..........................................................................-->
       <article class="container-carousel">
-          <img class="featured" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/129.png" alt="">
-          <img class="featured" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/023.png" alt="">
-          <img class="featured" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png" alt="">
-          <img class="featured" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/300.png" alt="">
+        <img class="featured" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/129.png" alt="">
+        <img class="featured" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/023.png" alt="">
+        <img class="featured" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png" alt="">
+        <img class="featured" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/300.png" alt="">
       </article>
+    </div>
     </main>
 
 
