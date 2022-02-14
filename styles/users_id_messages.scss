@@ -2,8 +2,70 @@ body {
 section.messages {
   display: flex;
   justify-content: space-between;
+  margin-left: 4em;
+  margin-right: 4em;
 }
 form.messages-text-box {
   display: flex;
+}
+.messages-title-left {
+  text-align: center;
+}
+.messages-container-left {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 2em;
+  margin: 10px 16px;
+  width: 400px;
+  text-align: center;
+}
+.messages-container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 2em;
+  margin: 10px 0;
+}
+
+/* Darker chat container */
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+/* Clear floats */
+.messages-container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Style images */
+.messages-container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+/* Style the right image */
+.messages-container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
 }
 }
