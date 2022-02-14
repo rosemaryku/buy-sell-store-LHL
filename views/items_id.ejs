@@ -40,17 +40,17 @@
         <div class="left-container">
 
           <!-- Toggle Sold Marker  -->
-          <% if (items[itemId-1].sold) { %>
+          <% if (specificItem.sold) { %>
           <span id=soldMarker> <b>SOLD</b> </span>
           <% } %>
 
           <span><img id="poke-pic"
-            src= <%= items[itemId-1].picture_url %>
-           alt="Bulbasaur">
+            src= <%= specificItem.picture_url %>
+           alt=" <%= specificItem.title%>">
         </span>
 
           <div class="poke-name">
-            <span><%= items[itemId-1].title %>
+            <span><%= specificItem.title %>
 
             </span>
               <i class="fa-solid fa-heart"></i>
@@ -59,15 +59,15 @@
 
         <div class="right-container">
           <div class="top-right-container">
-            <p> <b>Price: </b> $<%= items[itemId-1].price_per_item / 100 %> </p>
-            <p> <b>Posted On:</b> <%=  (items[itemId-1].posted_at).toISOString().slice(0, 10); %></p>
+            <p> <b>Price: </b> $<%= specificItem.price_per_item / 100 %> </p>
+            <p> <b>Posted On:</b> <%=  (specificItem.posted_at).toISOString().slice(0, 10); %></p>
           </div>
 
-           <p> <b> Quantity:</b> <%= items[itemId-1].quantity %></p>
-           <p> <b> Description: </b> <%= items[itemId-1].description %> </p>
-           <p> <b> Seller Name: </b> <%= items[itemId-1].name %>  </p>
-           <p> <b> Seller Phone Number:</b> <%= items[itemId-1].phone_number %> </p>
-           <p><b> Seller Email: </b> <%= items[itemId-1].email %> </p>
+           <p> <b> Quantity:</b> <%= specificItem.quantity %></p>
+           <p> <b> Description: </b> <%= specificItem.description %> </p>
+           <p> <b> Seller Name: </b> <%= specificItem.name %>  </p>
+           <p> <b> Seller Phone Number:</b> <%= specificItem.phone_number %> </p>
+           <p><b> Seller Email: </b> <%= specificItem.email %> </p>
            <!-- TODO Revise route  -->
            <form action="/messages" method="POST">
               <textarea name="message" class="form-control" id="message" rows="2" placeholder="Message to seller"></textarea>
