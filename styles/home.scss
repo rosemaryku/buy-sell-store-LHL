@@ -66,16 +66,6 @@ width: 50%;
   background-color: azure;
 }
 
-.spanny-search {
-  width: 30rem;
-
-}
-
-.input-group>.form-control {
-  height: 3rem;
-  background-color: azure;
-
-}
 
 .olgabutton {
   font-size:larger;
@@ -98,5 +88,20 @@ width: 50%;
   display: flex;
 }
 
+.search-container {
+  width: 100%;
+  background-color: whitesmoke;
+  justify-content: center;
+  padding: 2rem;
+
+}
+
+.search-input-size {
+  width: 60%;
+  border: #FF0000 solid 3px;
+  border-radius: 10px;
+  margin-right: 2em;
+
+}
 
 
