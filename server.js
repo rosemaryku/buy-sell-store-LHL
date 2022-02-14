@@ -53,7 +53,7 @@ app.use("/items/new", itemsNewRoutes(db));
 app.use("/items", itemsIdRoutes(db));
 
 app.use("/users/:id/listings", usersIdListingsRoutes(db));
-app.use("/users/:id/favourites", usersIdFavouritesRoutes(db));
+app.use("/users", usersIdFavouritesRoutes(db));
 app.use("/users/:id/messages", usersIdMessagesRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
