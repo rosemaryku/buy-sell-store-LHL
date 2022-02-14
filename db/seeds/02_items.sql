@@ -3,8 +3,8 @@
 INSERT INTO items (owner_id, title, quantity, price_per_item, description, picture_url, posted_at, sold, active)
 VALUES
 
-(3, 'Bulbasaur', 1, 1000, 'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png',  '01/10/2021', FALSE, TRUE),
-(4, 'Charmander', 1, 33333, 'It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail', 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png',  '01/11/2021', FALSE, TRUE),
+(3, 'Bulbasaur', 1, 1000, 'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png',  '01/10/2021', FALSE, TRUE),
+(4, 'Charmander', 1, 33333, 'It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png',  '01/11/2021', FALSE, TRUE),
 (5, 'Squirtle', 1, 4444, 'When it retracts its long neck into its shell, it squirts out water with vigorous force.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png',  '01/12/2021', FALSE, TRUE),
 (2, 'Caterpie', 1, 16369, 'For protection, it releases a horrible stench from the antenna on its head to drive away enemies.', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png',  '01/13/2021', FALSE, TRUE),
 (3, 'Chikorita', 1, 18091, 'In battle, Chikorita waves its leaf around to keep the foe at bay. However, a sweet fragrance also wafts from the leaf, becalming the battling Pokémon and creating a cozy, friendly atmosphere all around', 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/152.png',  '01/14/2021', FALSE, TRUE),
