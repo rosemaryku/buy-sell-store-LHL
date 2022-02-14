@@ -48,7 +48,6 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/items", apiItemsRoutes(db));
 app.use("/items/new", itemsNewRoutes(db));
 app.use("/items", itemsIdRoutes(db));
-// app.use("/items", itemsRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 

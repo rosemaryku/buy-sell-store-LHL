@@ -4,10 +4,11 @@ const router  = express.Router();
 module.exports = (db) => {
 
  router.get("/:id", (req, res) => {
+  // TODO edit to to prevent SQL injection
   db.query(`SELECT * FROM items JOIN users ON owner_id = users.id;`)
   .then(data => {
     const items = data.rows;
-    console.log("ID:", req.params.id);
+    // console.log("ID:", req.params.id);
     const templateVars = {
       items: items,
       itemId: req.params.id

@@ -5,8 +5,6 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     res.render("items_new");
   });
-
   return router;
-
 };
 
