@@ -103,11 +103,28 @@ a.featured {
   width: 20%;
   background-color: $color-red;
   border-radius: 10px;
-  padding: 4em 1em;
+  padding: 2em 1em;
   margin: 1em;
   display: flex;
+  align-items:flex-end;
+  flex-direction: column;
+  text-decoration: none;
+  z-index: 0;
+
+
+}
+span.text {
+  z-index: 1;
+  font-size: 2em;
+  font-weight: 600;
+  color:black;
+  padding: 0.5em;
+  background-color: white;
+  border-radius: 4em;
 }
 .featured-img {
+
   width: 100%;
 
 }
+

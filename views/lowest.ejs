@@ -79,45 +79,45 @@
       </section>
 <!-- FEATURED PICTURES ..........................................................................-->
 
-<% for (let i = 0; i < Math.floor(items.length/4); i++) { %>
+          <% for (let i = 0; i < Math.floor(items.length/4); i++) { %>
 
-  <article class="container-carousel">
+          <article class="container-carousel">
 
-      <a class="featured" href="items/<%=items[0 + 3*i].id%>">
-        <span class="text"> $<%= items[0 + 3*i].price_per_item / 100 %></span>
-        <img class="featured-img"
-        src=<%= items[0 + 3*i].picture_url %>
-        alt=<%= items[0 + 3*i].title %>
-        >
-      </a>
+              <a class="featured" href="items/<%=items[0 + 3*i].id%>">
+                <span class="text"> $<%= items[0 + 3*i].price_per_item / 100 %></span>
+                <img class="featured-img"
+                src=<%= items[0 + 3*i].picture_url %>
+                alt=<%= items[0 + 3*i].title %>
+                >
+              </a>
 
-      <a class="featured" href="items/<%=items[1 + 3*i].id%>">
-        <span class="text"> $<%= items[1 + 3*i].price_per_item / 100 %></span>
-        <img class="featured-img"
-        src=<%= items[1 + 3*i].picture_url %>
-        alt=<%= items[1 + 3*i].title %>
-        >
-      </a>
+              <a class="featured" href="items/<%=items[1 + 3*i].id%>">
+                <span class="text"> $<%= items[1 + 3*i].price_per_item / 100 %></span>
+                <img class="featured-img"
+                src=<%= items[1 + 3*i].picture_url %>
+                alt=<%= items[1 + 3*i].title %>
+                >
+              </a>
 
-      <a class="featured" href="items/<%=items[2 + 3*i].id%>">
-        <span class="text"> $<%= items[2 + 3*i].price_per_item / 100 %></span>
-        <img class="featured-img"
-        src=<%= items[2 + 3*i].picture_url %>
-        alt=<%= items[2 + 3*i].title %>
-        >
-      </a>
+              <a class="featured" href="items/<%=items[2 + 3*i].id%>">
+                <span class="text"> $<%= items[2 + 3*i].price_per_item / 100 %></span>
+                <img class="featured-img"
+                src=<%= items[2 + 3*i].picture_url %>
+                alt=<%= items[2 + 3*i].title %>
+                >
+              </a>
 
-      <a class="featured" href="items/<%=items[0 + 3*i].id%>">
-        <span class="text"> $<%= items[3 + 3*i].price_per_item / 100 %></span>
-        <img class="featured-img"
-        src=<%= items[3 + 3*i].picture_url %>
-        alt=<%= items[3 + 3*i].title %>
-        >
-      </a>
+              <a class="featured" href="items/<%=items[0 + 3*i].id%>">
+                <span class="text"> $<%= items[3 + 3*i].price_per_item / 100 %></span>
+                <img class="featured-img"
+                src=<%= items[3 + 3*i].picture_url %>
+                alt=<%= items[3 + 3*i].title %>
+                >
+              </a>
 
-  </article>
+          </article>
 
-  <% } %>
+          <% } %>
 
     </div>
     </main>

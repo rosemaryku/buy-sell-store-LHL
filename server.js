@@ -46,7 +46,10 @@ const usersIdMessagesRoutes = require("./routes/users_id_messages");
 const homeRoutes = require("./routes/home");
 const loginRoutes = require("./routes/login");
 const registerRoutes = require("./routes/register");
-const homeHighestRoutes = require("./routes/highest")
+const homeHighestRoutes = require("./routes/highest");
+const homeLowestRoutes = require("./routes/lowest");
+const homeOldestRoutes = require("./routes/oldest");
+const searchRoutes = require("./routes/search");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -61,7 +64,10 @@ app.use("/users/:id/messages", usersIdMessagesRoutes(db));
 app.use("/home", homeRoutes(db));
 app.use("/login", loginRoutes(db));
 app.use("/register", registerRoutes(db));
-app.use("/highest", homeHighestRoutes(db))
+app.use("/highest", homeHighestRoutes(db));
+app.use("/lowest", homeLowestRoutes(db));
+app.use("/oldest", homeOldestRoutes(db));
+app.use("/search", searchRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
