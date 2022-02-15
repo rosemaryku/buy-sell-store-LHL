@@ -16,7 +16,7 @@ module.exports = (db) => {
       // console.log("items:", items);
       const templateVars = {
         items: items,
-        userId: req.params.id
+        userId: req.session.user_id,
       };
       res.render("items_new", templateVars);
     })

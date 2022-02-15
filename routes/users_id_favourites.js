@@ -10,7 +10,8 @@ module.exports = (db) => {
         console.log(items);
         const templateVars = {
           items: items,
-          itemId: req.params.id
+          itemId: req.params.id,
+          userId: req.session.user_id
         };
         res.render("users_favourites", templateVars);
       })
