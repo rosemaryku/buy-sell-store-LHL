@@ -19,7 +19,7 @@
   <nav class="navbar navbar-expand-lg bg-black navbar-dark">
     <div class="container">
       <img class="logo" src="">
-      <a href="#" class="navbar-brand">Pokemon Black Market</a>
+      <a href="/users/<%= items[0].owner_id%>/home" class="navbar-brand">Pokemon Black Market</a>
 
       <button class="navbar-toggler"
               type="button"
@@ -30,9 +30,9 @@
 
       <div class="collapse navbar-collapse" id="navmenu">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a href="/users/:id" class="nav-link">NAME</a></li>
-          <li class="nav-item"><a href="/users/:id/favourites" class="nav-link">Favourites</a></li>
-          <li class="nav-item"><a href="/items/new" class="nav-link">Post Pokemon</a></li>
+          <li class="nav-item"><a href="/users/<%= items[0].owner_id%>/listings" class="nav-link"><%= items[0].name%></a></li>
+          <li class="nav-item"><a href="/users/<%= items[0].owner_id%>/favourites" class="nav-link">Favourites</a></li>
+          <li class="nav-item"><a href="/users/<%= items[0].owner_id%>/items/new" class="nav-link">Post Pokemon</a></li>
           <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
         </ul>
       </div>

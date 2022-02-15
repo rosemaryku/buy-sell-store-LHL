@@ -52,12 +52,12 @@ const registerRoutes = require("./routes/register");
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/items", apiItemsRoutes(db));
-app.use("/items/new", itemsNewRoutes(db));
+app.use("/users", itemsNewRoutes(db));
 app.use("/items", itemsIdRoutes(db));
-app.use("/users/:id/listings", usersIdListingsRoutes(db));
-app.use("/users/:id/favourites", usersIdFavouritesRoutes(db));
-app.use("/users/:id/messages", usersIdMessagesRoutes(db));
-app.use("/home", homeRoutes(db));
+app.use("/users", usersIdListingsRoutes(db));
+app.use("/users", usersIdFavouritesRoutes(db));
+app.use("/users", usersIdMessagesRoutes(db));
+app.use("/users", homeRoutes(db));
 app.use("/login", loginRoutes(db));
 app.use("/register", registerRoutes(db));
 // Note: mount other resources here, using the same pattern above
@@ -70,19 +70,9 @@ app.get("/", (req, res) => {
   res.render("example");
 });
 
-// app.get("/users/:id/favourites", (req, res) => {
-//   res.render("users_favourites");
-// });
+// app.post("/users/:id/listings/delete", (req, res) => {
 
-// app.get("/users/:id/listings", (req, res) => {
-//   res.render("users_id_listings");
-// });
-
-// app.get("/users/:id/messages", (req, res) => {
-//   res.render("users_id_messages");
-// });
-
-
+// })
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

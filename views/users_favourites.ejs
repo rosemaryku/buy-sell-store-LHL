@@ -30,11 +30,11 @@
   <section class='favourites-strip'>
     <ul class ='favourites-ul'>
         <i class="fa-solid fa-heart"></i>
-        <li><img class ="pokemon-small" src="<%= items[0].picture_url%>" alt="Bulbasaur"></li>
-        <li>$<%= items[0].price_per_item%></li>
-        <li><%= items[0].title%></li>
-        <li><%= items[0].quantity%> in stock</li>
-        <li><%= (items[0].posted_at).toISOString().slice(0, 10); %></li>
+        <li><img class ="pokemon-small" src="<%= items[itemId-1].picture_url%>" alt="Bulbasaur"></li>
+        <li>$<%= items[itemId-1].price_per_item%></li>
+        <li><%= items[itemId-1].title%></li>
+        <li><%= items[itemId-1].quantity%> in stock</li>
+        <li><%= (items[itemId-1].posted_at).toISOString().slice(0, 10); %></li>
       </ul>
   </section>
 </body>

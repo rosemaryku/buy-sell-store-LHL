@@ -2,13 +2,20 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
-    db.query(`SELECT * FROM items JOIN users ON owner_id = users.id;`)
+  router.get("/:id/messages", (req, res) => {
+    const values = [req.params.id];
+
+    db.query(
+      `SELECT * FROM items
+      JOIN users ON users.id = owner_id
+      WHERE owner_id = $1`,
+      values)
       .then(data => {
         const items = data.rows;
         console.log("ID:", items);
         const templateVars = {
-          items: items
+          items: items,
+          userId: req.params.id
         };
         res.render("users_id_messages", templateVars);
       })
@@ -42,3 +49,6 @@ module.exports = (db) => {
 
   return router;
 };
+
+
+
