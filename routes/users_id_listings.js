@@ -2,12 +2,11 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
-  router.get("/:id/listings", (req, res) => {
+  router.get("/:id/listings/", (req, res) => {
     const values = [req.params.id];
 
     db.query(
       `SELECT * FROM items
-      JOIN users ON owner_id = users.id
       WHERE owner_id = $1`,
       values
     ).then(data => {

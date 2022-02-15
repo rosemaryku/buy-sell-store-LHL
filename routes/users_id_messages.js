@@ -2,20 +2,20 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
-  router.get("/:id/messages", (req, res) => {
-    const values = [req.params.id];
-
+  router.get("/:id/messages/:itemId", (req, res) => {
+    const values = [req.params.id, req.params.itemId];
     db.query(
       `SELECT * FROM items
-      JOIN users ON users.id = owner_id
-      WHERE owner_id = $1`,
+      WHERE owner_id = $1
+      AND id = $2`,
       values)
       .then(data => {
         const items = data.rows;
         console.log("ID:", items);
         const templateVars = {
           items: items,
-          userId: req.params.id
+          userId: req.params.id,
+          itemId: req.params.itemId
         };
         res.render("users_id_messages", templateVars);
       })
@@ -34,7 +34,7 @@ module.exports = (db) => {
     const queryStr = `
       INSERT INTO messages (user_id, item_id, user_message)
       VALUES ($1, $2, $3)
-      RETURNING *;`
+      RETURNING *;`;
     const values = [1, `${req.params.itemId}`, `${req.body.message}`];
     // const values = [`${req.session.user_id}`, `${req.params.itemId}`, `${req.body.message}`];
     db.query(queryStr, values)
@@ -43,7 +43,7 @@ module.exports = (db) => {
       })
       .catch(err => {
         res.status(500).json({ error: err.message });
-      })
+      });
   });
 
 

@@ -32,7 +32,7 @@
       <% for(var i=0; i<items.length; i++) {%>
         <li class='listings-li'>
           <div>
-            <form method="GET" action="/users/<%= userId%>/messages">
+            <form method="GET" action="/users/<%= userId%>/messages/<%=items[i].id%>">
               <button type="submit" class="btn btn-primary">Messages</button>
             </form>
           </div>
