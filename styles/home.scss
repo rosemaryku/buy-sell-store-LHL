@@ -22,7 +22,6 @@ background-color: black;
 }
 .container-carousel {
 
-
   position: relative;
   background-color: azure;
   display: flex;
@@ -36,13 +35,8 @@ section {
   background-color: aquamarine;
 }
 
-.featured {
-  width: 20%;
-  background-color: $color-red;
-  border-radius: 10px;
-  padding: 4em 0;
-}
-.featured:hover {
+
+a.featured:hover {
   filter: drop-shadow(10px 10px 4px black);
 }
 
@@ -67,16 +61,6 @@ width: 50%;
   background-color: azure;
 }
 
-.spanny-search {
-  width: 30rem;
-
-}
-
-.input-group>.form-control {
-  height: 3rem;
-  background-color: azure;
-
-}
 
 .olgabutton {
   font-size:larger;
@@ -90,8 +74,57 @@ width: 50%;
 .azure {
   color: azure;
 }
+//remove spaces for specificity
+// .carousel-item.active.horizontal-align {
+//   display:flex;
+// }
+
+.horizontal-align {
+  display: flex;
+}
+
+.search-container {
+  width: 100%;
+  background-color: whitesmoke;
+  justify-content: center;
+  padding: 2rem;
+
+}
+
+.search-input-size {
+  width: 60%;
+  border: #FF0000 solid 3px;
+  border-radius: 10px;
+  margin-right: 2em;
+
+}
+
+a.featured {
+  width: 20%;
+  background-color: $color-red;
+  border-radius: 10px;
+  padding: 2em 1em;
+  margin: 1em;
+  display: flex;
+  align-items:flex-end;
+  flex-direction: column;
+  text-decoration: none;
+  z-index: 0;
 
 
+}
+span.text {
+  z-index: 1;
+  font-size: 2em;
+  font-weight: 600;
+  color:black;
+  padding: 0.5em;
+  background-color: white;
+  border-radius: 4em;
+}
+.featured-img {
 
+  width: 100%;
 
+}
 

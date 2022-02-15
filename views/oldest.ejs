@@ -20,13 +20,7 @@
 
       <div class="search-container horizontal-align">
           <div class="search-input-size">
-
-
-            <input id="search" type="text" onkeypress="handle(event)" aria-label="search-container"  placeholder="Search" class="search form-control text-field-styling olgabutton" >
-
-
-
-
+            <input type="text" aria-label="" placeholder="Search" class="form-control text-field-styling olgabutton">
           </div>
 
           <div class="btn-group wide-10">
@@ -130,7 +124,6 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -141,23 +134,5 @@
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-        <script>
-
-        function handle(e){
-          var searchq = document.getElementById("search").value;
-            if(e.keyCode === 13){
-
-              $.post( "/search", { search: searchq } );
-              $.get("/search", {search: searchq} );
-
-
-              // window.location = "http://localhost:8080/search";
-            }
-          // return false;
-        }
-
-        </script>
-
   </body>
 </html>
-
