@@ -32,6 +32,8 @@
 
   <body>
     <!-- Include nav bar  -->
+    <%- include('partials/nav_bar') %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
 
@@ -41,20 +43,20 @@
         <div class="left-container">
 
           <!-- Toggle Sold Marker  -->
-          <% if (specificItem.sold) { %>
+          <% if (items[0].sold) { %>
           <span id=soldMarker> <b>SOLD</b> </span>
           <% } %>
 
           <span><img id="poke-pic"
-            src= <%= specificItem.picture_url %>
-           alt=" <%= specificItem.title%>">
+            src= <%= items[0].picture_url %>
+           alt=" <%= items[0].title%>">
         </span>
 
           <div class="poke-name">
-            <span><%= specificItem.title %></span>
+            <span><%= items[0].title %></span>
 
             <!-- Favourite Icon  -->
-            <form class="favHeart" action="/users/:id/favourites/<%= specificItem.items_id %>" method="POST">
+            <form class="favHeart" action="/users/id/favourites/<%= items[0].items_id %>" method="POST">
               <i class="fa-solid fa-heart"></i>
              </form>
           </div>
@@ -62,24 +64,22 @@
 
         <div class="right-container">
           <div class="top-right-container">
-            <p> <b>Price: </b> $<%= specificItem.price_per_item / 100 %> </p>
-            <p id="timeAgo"> <b>Posted:</b> <%=  (specificItem.posted_at).toISOString().slice(0, 10); %></p>
+            <p> <b>Price: </b> $<%= items[0].price_per_item / 100 %> </p>
+            <p id="timeAgo"> <b>Posted:</b> <%=  (items[0].posted_at).toISOString().slice(0, 10); %></p>
 
 
           </div>
 
-           <p> <b> Quantity:</b> <%= specificItem.quantity %></p>
-           <p> <b> Description: </b> <%= specificItem.description %> </p>
-           <p> <b> Seller Name: </b> <%= specificItem.name %>  </p>
-           <p> <b> Seller Phone Number:</b> <%= specificItem.phone_number %> </p>
-           <p><b> Seller Email: </b> <%= specificItem.email %>
-            <a href="mailto:<%= specificItem.email%>?subject=Pokemon Black Market Listing"><i class="email-icon fa-regular fa-envelope"></i></a>
+           <p> <b> Quantity:</b> <%= items[0].quantity %></p>
+           <p> <b> Description: </b> <%= items[0].description %> </p>
+           <p> <b> Seller Name: </b> <%= items[0].name %>  </p>
+           <p> <b> Seller Phone Number:</b> <%= items[0].phone_number %> </p>
+           <p><b> Seller Email: </b> <%= items[0].email %>
+            <a href="mailto:<%= items[0].email%>?subject=Pokemon Black Market Listing"><i class="email-icon fa-regular fa-envelope"></i></a>
            </p>
 
-
-
            <!-- Send seller message  -->
-           <form action="/users/:id/messages/<%= specificItem.items_id %>" method="POST">
+           <form action="/users/id/messages/<%= items[0].items_id %>" method="POST">
               <textarea name="message" class="form-control" id="message" rows="2" placeholder="Message to seller"></textarea>
               <div class="my-2">
                 <button type="submit" class="btn btn-primary mb-2">Send</button>
