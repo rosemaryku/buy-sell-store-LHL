@@ -23,11 +23,11 @@ module.exports = (db) => {
 
   // TODO: Change user_id to cookie value, currently hardcoded as 1 ie, UNCOMMENT code
   // NOTE: Added suffix to dyanmically get item ID, will need to refactor this
-  router.post("/:id2", (req, res) => {
+  router.post("/:itemId", (req, res) => {
     const queryStr = `INSERT INTO favourites (user_id, item_id)
       VALUES ($1, $2)
       RETURNING *;`
-    const values = [1, `${req.params.id2}`];
+    const values = [1, `${req.params.itemId}`];
     // const values = [`${req.session.user_id}`, `${req.params.id2}`];
     return db
       .query(queryStr, values)
