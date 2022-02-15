@@ -15,8 +15,7 @@ module.exports = (db) => {
     res.render("login")
   });
 
-
-  // Login submission
+  // Submit login
   router.post("", (req, res) => {
     const queryStr = `SELECT * FROM users WHERE email = $1;`
     const values = [`${req.body.email}`]
@@ -31,6 +30,7 @@ module.exports = (db) => {
         res.status(500).send("Wrong email");
       })
   });
+
 
   return router;
 

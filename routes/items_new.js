@@ -33,7 +33,7 @@ module.exports = (db) => {
       VALUES ($1, $2, $3, $4, $5, $6)
       RETURNING *`
 
-    const values = [1, `${req.body.name}`, `${req.body.quantity}`, `${req.body.price}`, `${req.body.desc}`, `${req.body.imageUrl}`];
+    const values = [`${req.session.user_id}`, `${req.body.name}`, `${req.body.quantity}`, `${req.body.price}`, `${req.body.desc}`, `${req.body.imageUrl}`];
 
     db.query(queryStr, values)
       .then(data => {

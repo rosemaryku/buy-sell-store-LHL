@@ -15,13 +15,14 @@ module.exports = (db) => {
 
   db.query(queryStr, values)
     .then(data => {
-      const specificItem = data.rows[0];
+      const items = data.rows;
+      console.log(items);
       // console.log("specificItem", specificItem);
       // console.log("Req Params ID:", req.params.id);
       const templateVars = {
-        specificItem: specificItem,
+        items: items,
       }
-      if (specificItem){
+      if (items){
         res.render("items_id", templateVars);
       } else {
         res.send("Error: Item does not exist");

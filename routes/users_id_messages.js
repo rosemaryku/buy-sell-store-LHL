@@ -26,17 +26,12 @@ module.exports = (db) => {
       });
   });
 
-
-  // TODO: Change user_id to cookie value, currently hardcoded as 1, UNCOMMENT code
-  // NOTE: Added suffix to dynamically get item ID, will need to refactor this
   router.post("/:id/messages/:itemId", (req, res) => {
-    // console.log("Req Body:", req.body);
     const queryStr = `
       INSERT INTO messages (user_id, item_id, user_message)
       VALUES ($1, $2, $3)
       RETURNING *;`
-    const values = [1, `${req.params.itemId}`, `${req.body.message}`];
-    // const values = [`${req.session.user_id}`, `${req.params.itemId}`, `${req.body.message}`];
+    const values = [`${req.session.user_id}`, `${req.params.itemId}`, `${req.body.message}`];
     db.query(queryStr, values)
       .then(data => {
         data.rows[0];
@@ -45,7 +40,6 @@ module.exports = (db) => {
         res.status(500).json({ error: err.message });
       })
   });
-
 
   return router;
 };
