@@ -69,6 +69,7 @@ app.use("/lowest", homeLowestRoutes(db));
 app.use("/oldest", homeOldestRoutes(db));
 app.use("/search", searchRoutes(db));
 
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page

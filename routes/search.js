@@ -16,27 +16,82 @@ const router  = express.Router();
 //   }
 module.exports = (db) => {
 
+  let searchq = "";
 
   router.post("/", (req, res) => {
+
+  let searchQuery = "";
+
   const search = req.body.search;
-  console.log(search)
+
+  searchQuery += '%';
+  searchQuery += search;
+  searchQuery += '%';
+  console.log("AFTER", searchQuery);
+
+  searchq += searchQuery;
+
+  });
+
+
+
+  // not able to call on it
+  router.get("/", (req, res) => {
+
+    db.query(`SELECT * FROM items LIKE $1;`, searchq)
+    .then(data => {
+      const items = data.rows;
+      console.log("ITEMS", items);
+      const templateVars = {
+        items: items
+      }
+
+
+      res.render("search", templateVars);
+    })
+    .catch(err => {
+      res
+      .status(500)
+      .json({ error: err.message });
+    });
   })
-return router
+  return router
 }
-  // db.query(`SELECT * FROM items LIKE '% ??? %';`)
-  // .then(data => {
-  //   const items = data.rows;
-  //   const templateVars = {
-  //     items: items
-  //   }
 
-  //   res.render("items/", templateVars);
-  //   })
-  //   .catch(err => {
-  //   res
-  //     .status(500)
-  //     .json({ error: err.message });
-  //   });
-  // });
 
-  // return router;
+// ERROR: ReferenceError: app is not defined
+// app.route("/")
+//   .post((rec, res) => {
+
+//   let searchQuery = "";
+
+//   const search = req.body.search;
+
+//   searchQuery += '%';
+//   searchQuery += search;
+//   searchQuery += '%';
+//   console.log("AFTER", searchQuery);
+
+//   })
+//   .get((rec, res) => {
+//     db.query(`SELECT * FROM items LIKE $1;`, searchQuery)
+//     .then(data => {
+//       const items = data.rows;
+//       const templateVars = {
+//         items: items
+//       }
+
+//       res.render("search", templateVars);
+//     })
+//     .catch(err => {
+//       res
+//       .status(500)
+//       .json({ error: err.message });
+//     });
+
+//   })
+
+// return router
+
+
+// }

@@ -11,7 +11,7 @@ const router  = express.Router();
 module.exports = (db) => {
 
   router.get("/", (req, res) => {
-   // TODO edit to to prevent SQL injection
+
   db.query(`SELECT * FROM items ORDER BY price_per_item;`)
   .then(data => {
     const items = data.rows;
