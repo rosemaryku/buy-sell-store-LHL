@@ -8,29 +8,18 @@
 const express = require('express');
 const router  = express.Router();
 
-// module.exports = (db) => {
-//   router.get("/", (req, res) => {
-//     res.render("index_pbm")
-//   });
-//   return router;
-// };
-
 module.exports = (db) => {
 
   router.get("/", (req, res) => {
    // TODO edit to to prevent SQL injection
-  db.query(`SELECT * FROM items ORDER BY posted_at DESC;`)
+  db.query(`SELECT * FROM items ORDER BY price_per_item DESC;`)
   .then(data => {
-
     const items = data.rows;
-
     const templateVars = {
       items: items
-
-
     }
 
-    res.render("index_pbm", templateVars);
+    res.render("highest", templateVars);
     })
     .catch(err => {
     res

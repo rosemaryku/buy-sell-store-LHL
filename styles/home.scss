@@ -35,13 +35,8 @@ section {
   background-color: aquamarine;
 }
 
-.featured {
-  width: 20%;
-  background-color: $color-red;
-  border-radius: 10px;
-  padding: 4em 0;
-}
-.featured:hover {
+
+a.featured:hover {
   filter: drop-shadow(10px 10px 4px black);
 }
 
@@ -104,4 +99,15 @@ width: 50%;
 
 }
 
+a.featured {
+  width: 20%;
+  background-color: $color-red;
+  border-radius: 10px;
+  padding: 4em 1em;
+  margin: 1em;
+  display: flex;
+}
+.featured-img {
+  width: 100%;
 
+}
