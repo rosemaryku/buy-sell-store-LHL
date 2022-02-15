@@ -1,20 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 
-// module.exports = (db) => {
-//   router.get("/", (req, res) => {
-//     res.render("items_new");
-//   });
-//   return router;
-// };
 module.exports = (db) => {
-
-  // router.get("/", (req, res) => {
-  //       res.render("items_new");
-  //     });
-      // return router;
-    // };
-
 
   router.get("/:id/items/new", (req, res) => {
     const values = [req.params.id];
@@ -26,7 +13,7 @@ module.exports = (db) => {
       values
     ).then(data => {
       const items = data.rows;
-      console.log("items:", items);
+      // console.log("items:", items);
       const templateVars = {
         items: items,
         userId: req.params.id
@@ -40,7 +27,7 @@ module.exports = (db) => {
       });
   });
 
-  router.post("/", (req, res) => {
+  router.post("/items", (req, res) => {
     const queryStr = `
       INSERT INTO items (owner_id, title, quantity, price_per_item, description, picture_url)
       VALUES ($1, $2, $3, $4, $5, $6)
