@@ -40,18 +40,13 @@ a.featured:hover {
   filter: drop-shadow(10px 10px 4px black);
 }
 
-.carouselExampleControls {
-width: 50%;
-}
-
 .title-text {
 
   font-weight:bolder;
   background-color: azure;
+
 }
-.title-text>h1 {
-  margin: 0;
-}
+
 
 .text-field-styling {
   padding: 1em;
@@ -81,6 +76,7 @@ width: 50%;
 
 .horizontal-align {
   display: flex;
+  justify-content: flex-start;
 }
 
 .search-container {

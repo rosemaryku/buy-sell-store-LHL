@@ -43,10 +43,10 @@
         </div>
 
         <!-- CAROUSEL ........................................................................-->
-        <article class="container-fluid classy-article">
-
-          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
+        <div class="container-fluid">
+          <article class="container-fluid classy-article">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
               <% for (let i = 0; i < Math.floor(items.length/3); i++) { %>
 
                 <% if (i === 0) { %>
@@ -56,6 +56,7 @@
                 <% } %>
 
                   <div class="horizontal-align">
+                    
                     <img class="d-block "
                     src=<%= items[0 + 3*i].picture_url %>
                     alt=<%= items[0 + 3*i].title %>
@@ -74,13 +75,23 @@
                 <% } %>
             </div>
           </div>
-
-
       </article>
+    </div>
+
       <!-- FEATURED POKEMON ...........................................................................-->
-      <section class="title-text">
-        <h1 class="title-text">Featured Pokemon</h1>
-      </section>
+
+      <div class="container-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h1 class="title-text">Featured Pokemon</h1>
+            </div>
+            <div class="col">
+
+            </div>
+          </div>
+        </div>
+      </div>
 <!-- FEATURED PICTURES ..........................................................................-->
 
 <div class="container-fluid">
