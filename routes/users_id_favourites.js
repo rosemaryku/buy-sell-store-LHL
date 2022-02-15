@@ -3,7 +3,7 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/:id/favourites", (req, res) => {
-    db.query(`SELECT * FROM items JOIN users ON users.id = owner_id;`)
+    db.query(`SELECT * FROM items JOIN users ON owner_id = users.id`)
       .then(data => {
         const items = data.rows;
         console.log("ID:", req.params.id);

@@ -26,14 +26,14 @@
   <!-- Add these to all ejs files to render -->
   <%- include('partials/nav_bar') %>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <h1>Your Listings</h1>
+  <h1><%= items[0].name%>'s Listings</h1>
   <section class='listings-strip'>
     <ul class='listings-ul'>
       <% for(var i=0; i<items.length; i++) {%>
         <li class='listings-li'>
           <div>
-            <form method="POST" action="/users/:id/listings/mark-sold">
-              <button type="submit" class="btn btn-primary">Mark Sold</button>
+            <form method="GET" action="/users/<%= userId%>/messages">
+              <button type="submit" class="btn btn-primary">Messages</button>
             </form>
           </div>
           <div><img class ="pokemon-small" src="<%= items[i].picture_url%>" alt=""></div>

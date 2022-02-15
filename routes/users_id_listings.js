@@ -6,7 +6,9 @@ module.exports = (db) => {
     const values = [req.params.id];
 
     db.query(
-      `SELECT * FROM items WHERE owner_id = $1`,
+      `SELECT * FROM items
+      JOIN users ON owner_id = users.id
+      WHERE owner_id = $1`,
       values
     ).then(data => {
       const items = data.rows;
