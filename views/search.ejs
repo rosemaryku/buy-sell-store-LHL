@@ -26,12 +26,22 @@
       <!-- FEATURED POKEMON ...........................................................................-->
 
   <% if (items.length === 0) { %>
+    <br>
     <div class="container-fluid">
-
-  <h1 class="title-text">We don't have any Pokemon by this name</h1>
-    <a class="btn btn-danger" href="/home" role="button">Go Home</a>
-
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1 class="title-text">We don't have any Pokemon by this name</h1>
+          </div>
+          <div class="col-md-auto">
+          </div>
+          <div class="col col-lg-2">
+            <a class="btn btn-danger" href="/home" role="button">Go Home</a>
+          </div>
+        </div>
+      </div>
   </div>
+
   <% } else { %>
 
     <br>
@@ -68,7 +78,7 @@
             </a>
           </div>
           <% } %>
-        </div>
+      </div>
 
 
     </main>
