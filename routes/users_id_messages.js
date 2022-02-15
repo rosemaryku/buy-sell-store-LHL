@@ -29,7 +29,7 @@ module.exports = (db) => {
 
   // TODO: Change user_id to cookie value, currently hardcoded as 1, UNCOMMENT code
   // NOTE: Added suffix to dynamically get item ID, will need to refactor this
-  router.post("/:itemId", (req, res) => {
+  router.post("/:id/messages/:itemId", (req, res) => {
     // console.log("Req Body:", req.body);
     const queryStr = `
       INSERT INTO messages (user_id, item_id, user_message)

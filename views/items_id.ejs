@@ -54,7 +54,7 @@
             <span><%= specificItem.title %></span>
 
             <!-- Favourite Icon  -->
-            <form class="favHeart" action="/users/:id/favourites/<%= specificItem.items_id %>" method="POST">
+            <form class="favHeart" action="/users/id/favourites/<%= specificItem.items_id %>" method="POST">
               <i class="fa-solid fa-heart"></i>
              </form>
           </div>
@@ -76,10 +76,8 @@
             <a href="mailto:<%= specificItem.email%>?subject=Pokemon Black Market Listing"><i class="email-icon fa-regular fa-envelope"></i></a>
            </p>
 
-
-
            <!-- Send seller message  -->
-           <form action="/users/:id/messages/<%= specificItem.items_id %>" method="POST">
+           <form action="/users/id/messages/<%= specificItem.items_id %>" method="POST">
               <textarea name="message" class="form-control" id="message" rows="2" placeholder="Message to seller"></textarea>
               <div class="my-2">
                 <button type="submit" class="btn btn-primary mb-2">Send</button>
