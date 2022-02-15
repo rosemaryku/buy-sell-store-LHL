@@ -21,18 +21,23 @@ module.exports = (db) => {
   });
 
 
-  // TODO: Change user_id to cookie value, currently hardcoded as 1 ie, UNCOMMENT code
+  // TODO: Change user_id to cookie value, currently hardcoded as 1, UNCOMMENT code
   // NOTE: Added suffix to dyanmically get item ID, will need to refactor this
   router.post("/:itemId", (req, res) => {
-    const queryStr = `INSERT INTO favourites (user_id, item_id)
+    const queryStr = `
+      INSERT INTO favourites (user_id, item_id)
       VALUES ($1, $2)
       RETURNING *;`
     const values = [1, `${req.params.itemId}`];
     // const values = [`${req.session.user_id}`, `${req.params.id2}`];
-    return db
-      .query(queryStr, values)
-      .then(res => res.rows[0])
-      .catch(err => console.log(err.message))
+    db.query(queryStr, values)
+      .then(data => {
+        data.rows[0];
+        // res.redirect(`/items/${req.params.itemId}`);
+      })
+      .catch(err => {
+        res.status(500).json({ error: err.message });
+      })
   });
 
 

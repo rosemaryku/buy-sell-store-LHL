@@ -8,6 +8,8 @@ $(document).ready(function () {
     $(".fa-heart").addClass("favourited");
   });
 
+
+
 });
 
 
