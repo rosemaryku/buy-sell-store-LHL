@@ -1,12 +1,29 @@
-body {
-ul.favourites-ul {
-  border-style: double;
-  display:flex;
-  justify-content: space-around;
-  list-style-type: none;
-  align-items: center;
+main {
+  margin: 50px 300px;
 }
-img.pokemon-small {
-  height: 64px;
+
+table {
+  margin-top: 40px;
+  vertical-align: middle
 }
+
+tr {
+  vertical-align: middle;
 }
+
+.fav-link {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.fa-solid {
+  height: 500%;
+}
+
+.pokemon-small {
+  height: 70px;
+}
+
+
+
