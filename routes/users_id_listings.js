@@ -24,6 +24,21 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+  router.post("/:id/listings/:itemId/delete", (req, res) => {
+    const queryStr = `
+      DELETE FROM items
+      WHERE owner_id = $1
+      AND items.id = $2`;
+    const values = [`${req.session.user_id}`, `${req.params.itemId}`];
+    db.query(queryStr, values)
+      .then(data => {
+        data.rows[0];
+        res.redirect(`/users/${req.session.user_id}/listings`);
+      })
+      .catch(err => {
+        res.status(500).json({ error: err.message });
+      });
+  });
 
   return router;
 };
