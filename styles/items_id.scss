@@ -53,4 +53,17 @@ main {
 .fa-heart:hover {
   color: #dd2525;
   cursor: pointer;
+  transform: scale(1.1);
+
 }
+
+.email-icon {
+  color: #000000
+}
+
+.email-icon:hover {
+  color:#3639ec;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
