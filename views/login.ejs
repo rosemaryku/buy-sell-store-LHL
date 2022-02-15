@@ -17,6 +17,7 @@
     <div class="master-main center-main">
     <div class="center-img">
       <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/079.png" alt="">
+
     </div>
 
     <div class="center">
@@ -24,18 +25,32 @@
 
       <br>
       <br>
+     <h3> Welcome to Black Market Pokemon! </h3>
       <br>
-      <div class="center-input">
-        <input type="text" placeholder="NAME">
-      </div>
-      <br>
-      <div class="center-input">
-        <input type="text" placeholder="NAME">
-      </div>
-      <br>
-      <div class="center">
-        <button type="button" class="btn btn-primary">Login</button>
-      </div>
+
+      <form action="/login" method="POST">
+        <div class="form-group mb-2">
+          <label for="email">Email Address:</label>
+          <input
+            class="form-control"
+            type="email"
+            name="email"
+            style="width: 400px"
+          />
+
+          <label for="password">Password:</label>
+          <input
+            class="form-control"
+            type="password"
+            name="password"
+            style="width: 400px"
+          />
+          <br />
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+      </form>
+
+
       <div class="center">
         <a href="/views/register.ejs">Register</a>
       </div>
