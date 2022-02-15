@@ -21,27 +21,28 @@
       <div class="master">
 
       <div class="search-container horizontal-align">
-          <div class="search-input-size">
+        <div class="search-input-size">
+          <form  action="/search" method="POST">
+              <input name="search" type="text"  aria-label="search-container"  placeholder="Search" class="search form-control text-field-styling olgabutton" >
+        </div>
+            <div class="btn-group ">
+              <button type="submit" class="btn btn-primary right-margin ">Search</button>
+            </div>
+          </form>
 
 
-            <input id="search" type="text" onkeypress="handle(event)" aria-label="search-container"  placeholder="Search" class="search form-control text-field-styling olgabutton" >
+            <div class="btn-group wide-10">
+              <button type="button" class="btn btn-danger dropdown-toggle olgabutton wide-10 " data-bs-toggle="dropdown" aria-expanded="false">
+                Filter
+              </button>
+              <ul class="dropdown-menu wide-10">
+                <li><a class="dropdown-item " href="/lowest">Price: Lowest</a></li>
+                <li><a class="dropdown-item " href="/highest">Price: Highest</a></li>
+                <li><a class="dropdown-item " href="/home">Newest: First</a></li>
+                <li><a class="dropdown-item " href="/oldest">Oldest: First</a></li>
+              </ul>
+            </div>
 
-
-
-
-          </div>
-
-          <div class="btn-group wide-10">
-            <button type="button" class="btn btn-danger dropdown-toggle olgabutton wide-10 " data-bs-toggle="dropdown" aria-expanded="false">
-              Filter
-            </button>
-            <ul class="dropdown-menu wide-10">
-              <li><a class="dropdown-item " href="/lowest">Price: Lowest</a></li>
-              <li><a class="dropdown-item " href="/highest">Price: Highest</a></li>
-              <li><a class="dropdown-item " href="/home">Newest: First</a></li>
-              <li><a class="dropdown-item " href="/oldest">Oldest: First</a></li>
-            </ul>
-          </div>
       </div>
 
         <!-- CAROUSEL ........................................................................-->
@@ -142,23 +143,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-        <script>
-
-        function handle(e){
-          var searchq = document.getElementById("search").value;
-            if(e.keyCode === 13){
-
-              $.post( "/search", { search: searchq } );
-              $.get("/search", {search: searchq} );
-
-
-              // window.location = "http://localhost:8080/search";
-            }
-          // return false;
-        }
-
-        </script>
 
   </body>
 </html>

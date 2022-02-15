@@ -80,19 +80,6 @@ app.get("/", (req, res) => {
   res.render("example");
 });
 
-// app.get("/users/:id/favourites", (req, res) => {
-//   res.render("users_favourites");
-// });
-
-// app.get("/users/:id/listings", (req, res) => {
-//   res.render("users_id_listings");
-// });
-
-// app.get("/users/:id/messages", (req, res) => {
-//   res.render("users_id_messages");
-// });
-
-
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
