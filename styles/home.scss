@@ -154,8 +154,10 @@ a.fixed {
 }
 
 .left-right-padding {
-padding-left: 1em;
-padding-right: 1em;
+padding-left: 0.5em;
+padding-right: 0.5em;
+margin-left: 0.1em;
+margin-right: 0.1em;
 }
 
 .top-bottom-padding {
@@ -184,7 +186,7 @@ div.col {
   justify-content:flex-start;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   /* For mobile phones: */
   // .carousel-item {
   //   width: 100%;
@@ -230,23 +232,42 @@ div.col {
 
   }
 
+
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 540px) {
   a.fixed {
     width: 80%;
     justify-content: center;
     align-items: center;
-    padding: 0.6em;
+
 
   }
-  span.text {
-
+.text {
     font-size: 0.8em;
-    font-weight: 600;
-    color:black;
     padding: 0.4em;
-    background-color: white;
-    border-radius: 4em;
     margin-bottom: 0.8em;
   }
+  .top-bottom-padding {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    }
+  .btn.btn-danger.btn-lg.dropdown-toggle.wide-10  {
+      padding: 0rem;
+      font-size: 1rem;
+      border-radius: 0.3rem;
+
+    }
+  .btn.btn-primary.btn-lg.right-margin {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+  }
+  .row.sized>* {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .search-container.horizontal-align {
+    padding: 1em;
+  }
+
 }
