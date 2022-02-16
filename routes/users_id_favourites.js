@@ -11,7 +11,8 @@ module.exports = (db) => {
         const templateVars = {
           items: items,
           itemId: req.params.id,
-          userId: req.session.user_id
+          userId: req.session.user_id,
+          userName: req.session.user_name
         };
         res.render("users_favourites", templateVars);
       })
@@ -27,7 +28,7 @@ module.exports = (db) => {
     const queryStr = `
       INSERT INTO favourites (user_id, item_id)
       VALUES ($1, $2)
-      RETURNING *;`
+      RETURNING *;`;
     const values = [`${req.session.user_id}`, `${req.params.itemId}`];
     db.query(queryStr, values)
       .then(data => {
@@ -35,7 +36,7 @@ module.exports = (db) => {
       })
       .catch(err => {
         res.status(500).json({ error: err.message });
-      })
+      });
   });
 
   return router;

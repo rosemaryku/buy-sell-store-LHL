@@ -38,7 +38,8 @@ module.exports = (db) => {
         const templateVars = {
           items: items,
           userId: req.session.user_id,
-          itemId: req.params.itemId
+          itemId: req.params.itemId,
+          userName: req.session.user_name
         };
         res.render("users_id_messages", templateVars);
       })

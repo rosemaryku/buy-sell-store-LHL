@@ -32,13 +32,13 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a href="/login" class="nav-link">Favourites</a></li>
           <li class="nav-item"><a href="/login" class="nav-link">Post Pokemon</a></li>
-          <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
+          <li class="nav-item"><a href="/login" class="nav-link">Log In</a></li>
         </ul>
       </div>
       <%}else {%>
       <div class="collapse navbar-collapse" id="navmenu">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a href="/users/<%= userId %>/listings" class="nav-link"><%= userId %></a></li>
+          <li class="nav-item"><a href="/users/<%= userId %>/listings" class="nav-link"><%= userName %></a></li>
           <li class="nav-item"><a href="/users/<%= userId %>/favourites" class="nav-link">Favourites</a></li>
           <li class="nav-item"><a href="/users/<%= userId %>/items/new" class="nav-link">Post Pokemon</a></li>
           <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>

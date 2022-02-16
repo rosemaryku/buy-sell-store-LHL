@@ -15,6 +15,7 @@ module.exports = (db) => {
       const templateVars = {
         items: items,
         userId: req.session.user_id,
+        userName: req.session.user_name
       };
       res.render("users_id_listings", templateVars);
     })
