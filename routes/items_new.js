@@ -17,6 +17,7 @@ module.exports = (db) => {
       const templateVars = {
         items: items,
         userId: req.session.user_id,
+        userName: req.session.user_name
       };
       res.render("items_new", templateVars);
     })
@@ -31,7 +32,7 @@ module.exports = (db) => {
     const queryStr = `
       INSERT INTO items (owner_id, title, quantity, price_per_item, description, picture_url)
       VALUES ($1, $2, $3, $4, $5, $6)
-      RETURNING *`
+      RETURNING *`;
 
     const values = [`${req.session.user_id}`, `${req.body.name}`, `${req.body.quantity}`, `${req.body.price}`, `${req.body.desc}`, `${req.body.imageUrl}`];
 

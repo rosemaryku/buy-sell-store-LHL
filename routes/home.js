@@ -40,25 +40,25 @@ module.exports = (db) => {
   //     });
   // })
   router.get("/", (req, res) => {
-   // TODO edit to to prevent SQL injection
-  db.query(`SELECT * FROM items ORDER BY posted_at DESC;`)
-  .then(data => {
+    // TODO edit to to prevent SQL injection
+    db.query(`SELECT * FROM items ORDER BY posted_at DESC;`)
+      .then(data => {
 
-    const items = data.rows;
+        const items = data.rows;
 
-    const templateVars = {
-      items: items
+        const templateVars = {
+          items: items,
+          userId: req.session.user_id,
+          userName: req.session.user_name
+        };
 
-
-    }
-
-    res.render("index_pbm", templateVars);
-    })
-    .catch(err => {
-    res
-      .status(500)
-      .json({ error: err.message });
-    });
+        res.render("index_pbm", templateVars);
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
   });
 
   return router;

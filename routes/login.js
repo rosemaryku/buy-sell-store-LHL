@@ -12,23 +12,24 @@ const router  = express.Router();
 module.exports = (db) => {
 
   router.get("/", (req, res) => {
-    res.render("login")
+    res.render("login");
   });
 
   // Submit login
   router.post("", (req, res) => {
-    const queryStr = `SELECT * FROM users WHERE email = $1;`
-    const values = [`${req.body.email}`]
+    const queryStr = `SELECT * FROM users WHERE email = $1;`;
+    const values = [`${req.body.email}`];
 
     db.query(queryStr, values)
       .then(data => {
-        const userId = data.rows[0].id
+        const userId = data.rows[0].id;
         req.session.user_id = userId;
-        res.redirect(`users/${userId}/items/new`)
+        req.session.user_name = data.rows[0].name;
+        res.redirect(`users/${userId}/items/new`);
       })
       .catch(err => {
         res.status(500).send("Wrong email");
-      })
+      });
   });
 
 

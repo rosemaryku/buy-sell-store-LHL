@@ -3,9 +3,9 @@ const router  = express.Router();
 
 module.exports = (db) => {
 
- router.get("/:id", (req, res) => {
+  router.get("/:id", (req, res) => {
 
-  const queryStr = `
+    const queryStr = `
     SELECT *, items.id AS items_id
     FROM items
     JOIN users ON owner_id = users.id
@@ -33,6 +33,8 @@ module.exports = (db) => {
       const templateVars = {
         items: items,
         userId: req.session.user_id,
+        userName: req.session.user_name
+
       }
       // console.log(templateVars);
       if (items){
