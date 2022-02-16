@@ -108,28 +108,28 @@ a.featured:hover {
 
 }
 
-a.featured {
-  width: 20%;
-  background-color: $color-red;
-  border-radius: 10px;
-  padding: 2em 1em;
-  margin: 1em;
-  display: flex;
-  align-items:flex-end;
-  flex-direction: column;
-  text-decoration: none;
-  z-index: 0;
+// a.featured {
+//   width: 20%;
+//   background-color: $color-red;
+//   border-radius: 10px;
+
+//   margin: 1em;
+//   display: flex;
+//   align-items:flex-end;
+//   flex-direction: column;
+//   text-decoration: none;
+//   z-index: 0;
 
 
-}
-span.text {
+// }
+.text {
 
   font-size: 2em;
   font-weight: 600;
   color:black;
-  padding: 0.5em;
+  padding: 10 0 1 0em;
   background-color: white;
-  border-radius: 4em;
+  border-radius: 2em;
 }
 .featured-img {
 
@@ -144,7 +144,7 @@ a.fixed {
   width: 15em;
   background-color: $color-red;
   border-radius: 10px;
-  padding: 2em 1em;
+
   margin: 1em;
   display: flex;
   align-items:center;
@@ -152,6 +152,17 @@ a.fixed {
   text-decoration: none;
   z-index: 0;
 }
+
+.left-right-padding {
+padding-left: 1em;
+padding-right: 1em;
+}
+
+.top-bottom-padding {
+padding-top: 2em;
+padding-bottom: 2em;
+}
+
 a.fixed:hover {
   box-shadow: 10px 10px 5px rgb(27, 28, 29);
 }
