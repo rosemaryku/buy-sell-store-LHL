@@ -18,25 +18,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <main>
       <!-- SEARCH BAR AND FILTER .........................................................-->
-      <div class="master">
-
-      <div class="search-container horizontal-align">
+      <div class="container-fluid">
+        <div class="search-container horizontal-align">
           <div class="search-input-size">
-            <input type="text" aria-label="" placeholder="Search" class="form-control text-field-styling olgabutton">
+            <form  action="/search" method="POST">
+              <input name="search" type="text"  aria-label="search-container"  placeholder="Search" class="search form-control text-field-styling olgabutton" >
           </div>
+          <div class="btn-group ">
+            <button type="submit" class="btn btn-primary right-margin ">Search</button>
+          </div>
+            </form>
 
-          <div class="btn-group wide-10">
-            <button type="button" class="btn btn-danger dropdown-toggle olgabutton wide-10 " data-bs-toggle="dropdown" aria-expanded="false">
-              Filter
-            </button>
-            <ul class="dropdown-menu wide-10">
-              <li><a class="dropdown-item " href="/lowest">Price: Lowest</a></li>
-              <li><a class="dropdown-item " href="/highest">Price: Highest</a></li>
-              <li><a class="dropdown-item " href="/home">Newest: First</a></li>
-              <li><a class="dropdown-item " href="/oldest">Oldest: First</a></li>
-            </ul>
-          </div>
-      </div>
+            <div class="btn-group wide-10">
+              <button type="button" class="btn btn-danger dropdown-toggle olgabutton wide-10 " data-bs-toggle="dropdown" aria-expanded="false">
+                Filter
+              </button>
+                <ul class="dropdown-menu wide-10">
+                  <li><a class="dropdown-item " href="/lowest">Price: Lowest</a></li>
+                  <li><a class="dropdown-item " href="/highest">Price: Highest</a></li>
+                  <li><a class="dropdown-item " href="/home">Newest: First</a></li>
+                  <li><a class="dropdown-item " href="/oldest">Oldest: First</a></li>
+                </ul>
+            </div>
+        </div>
 
         <!-- CAROUSEL ........................................................................-->
         <article class="classy-article">
@@ -74,62 +78,76 @@
 
       </article>
       <!-- FEATURED POKEMON ...........................................................................-->
-      <section class="title-text">
-        <h1 class="title-text">Featured Pokemon</h1>
-      </section>
+      <div class="container-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h1 class="title-text">Featured Pokemon</h1>
+            </div>
+            <div class="col">
+
+            </div>
+          </div>
+        </div>
+      </div>
 <!-- FEATURED PICTURES ..........................................................................-->
 
-<% for (let i = 0; i < Math.floor(items.length/4); i++) { %>
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <% for (let i = 0; i < Math.floor(items.length/4); i++) { %>
 
-  <article class="container-carousel">
 
-      <a class="featured" href="items/<%=items[0 + 4*i].id%>">
-        <span class="text"> $<%= items[0 + 4*i].price_per_item / 100 %></span>
-        <img class="featured-img"
-        src=<%= items[0 + 4*i].picture_url %>
-        alt=<%= items[0 + 4*i].title %>
-        >
-      </a>
+        <div class="col">
+          <a class="fixed" href="items/<%=items[0 + 4*i].id%>">
+            <span class="text"> $<%= items[0 + 4*i].price_per_item / 100 %></span>
+            <img class="featured-img"
+            src=<%= items[0 + 4*i].picture_url %>
+            alt=<%= items[0 + 4*i].title %>
+            >
+          </a>
+        </div>
 
-      <a class="featured" href="items/<%=items[1 + 4*i].id%>">
-        <span class="text"> $<%= items[1 + 4*i].price_per_item / 100 %></span>
-        <img class="featured-img"
-        src=<%= items[1 + 4*i].picture_url %>
-        alt=<%= items[1 + 4*i].title %>
-        >
-      </a>
+        <div class="col">
+          <a class="fixed" href="items/<%=items[1 + 4*i].id%>">
+            <span class="text"> $<%= items[1 + 4*i].price_per_item / 100 %></span>
+            <img class="featured-img"
+            src=<%= items[1 + 4*i].picture_url %>
+            alt=<%= items[1 + 4*i].title %>
+            >
+          </a>
+        </div>
 
-      <a class="featured" href="items/<%=items[2 + 4*i].id%>">
-        <span class="text"> $<%= items[2 + 4*i].price_per_item / 100 %></span>
-        <img class="featured-img"
-        src=<%= items[2 + 4*i].picture_url %>
-        alt=<%= items[2 + 4*i].title %>
-        >
-      </a>
+        <div class="col">
+          <a class="fixed" href="items/<%=items[2 + 4*i].id%>">
+            <span class="text"> $<%= items[2 + 4*i].price_per_item / 100 %></span>
+            <img class="featured-img"
+            src=<%= items[2 + 4*i].picture_url %>
+            alt=<%= items[2 + 4*i].title %>
+            >
+          </a>
+        </div>
 
-      <a class="featured" href="items/<%=items[3 + 4*i].id%>">
-        <span class="text"> $<%= items[3 + 4*i].price_per_item / 100 %></span>
-        <img class="featured-img"
-        src=<%= items[3 + 4*i].picture_url %>
-        alt=<%= items[3 + 4*i].title %>
-        >
-      </a>
-
-  </article>
-
-  <% } %>
-
+        <div class="col">
+          <a class="fixed" href="items/<%=items[3 + 4*i].id%>">
+            <span class="text"> $<%= items[3 + 4*i].price_per_item / 100 %></span>
+            <img class="featured-img"
+            src=<%= items[3 + 4*i].picture_url %>
+            alt=<%= items[3 + 4*i].title %>
+            >
+          </a>
+        </div>
+      <% } %>
     </div>
-    </main>
+  </div>
+</main>
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
