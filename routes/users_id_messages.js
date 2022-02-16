@@ -35,6 +35,7 @@ module.exports = (db) => {
     db.query(queryStr, values)
       .then(data => {
         data.rows[0];
+        res.redirect('back');
       })
       .catch(err => {
         res.status(500).json({ error: err.message });

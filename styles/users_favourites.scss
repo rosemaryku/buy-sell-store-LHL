@@ -25,11 +25,16 @@ tr {
   height: 70px;
 }
 
-
 form:hover {
   color: #353ccb;
   cursor: pointer;
-
 }
+
+@media (max-width: 1350px) {
+  main {
+    margin: 20px 20px;
+  }
+}
+
 
 

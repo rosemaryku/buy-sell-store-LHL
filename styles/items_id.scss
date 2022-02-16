@@ -2,6 +2,14 @@ main {
   margin: 50px 300px;
 }
 
+body {
+  background-image: url("https://seeklogo.com/images/P/Pokemon-logo-497D61B223-seeklogo.com.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 15%;
+  background-position: 98% 95%;
+}
+
 .pokemon-container {
   padding: 2em 3em;
   background-color: #e9e7e7;
@@ -14,6 +22,7 @@ main {
   display: flex;
   flex-direction: column;
   margin-right:40px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -65,5 +74,21 @@ main {
   color:#3639ec;
   cursor: pointer;
   transform: scale(1.2);
+}
+
+.sent-prompt {
+  background-color: red;
+  display: none;
+}
+
+
+@media (max-width: 1350px) {
+  main {
+    margin: 20px 20px;
+  }
+
+  .pokemon-container {
+    flex-direction: column;
+  }
 }
 

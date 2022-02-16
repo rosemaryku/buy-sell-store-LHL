@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(() => {
 
   console.log("Ready");
 
@@ -11,6 +11,11 @@ $(document).ready(function () {
   $(".delete-fav").on("click", function() {
     this.submit();
   });
+
+  $("favHeart").on("dblclick", function(event) {
+    event.presentDefault();
+  })
+
 
 });
 

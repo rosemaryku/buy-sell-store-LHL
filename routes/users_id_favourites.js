@@ -57,10 +57,8 @@ module.exports = (db) => {
     console.log("Values:", values);
     db.query(queryStr, values)
       .then(data => {
-        // data.rows[0];
         console.log("Deleted");
         res.redirect('back');
-
       })
       .catch(err => {
         res.status(500).json({ error: err.message });
