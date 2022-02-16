@@ -27,7 +27,15 @@
               data-bs-target="#navmenu">
         <span class="navbar-toggler-icon"></span>
       </button>
-
+      <%if (!userId) {%>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="/login" class="nav-link">Favourites</a></li>
+          <li class="nav-item"><a href="/login" class="nav-link">Post Pokemon</a></li>
+          <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
+        </ul>
+      </div>
+      <%}else {%>
       <div class="collapse navbar-collapse" id="navmenu">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a href="/users/<%= userId %>/listings" class="nav-link"><%= userId %></a></li>
@@ -36,6 +44,7 @@
           <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
         </ul>
       </div>
+      <% } %>
     </div>
   </nav>
   </body>
