@@ -41,7 +41,7 @@ a.featured:hover {
 }
 
 .title-text {
-
+  margin-top: 1em;
   font-weight:bolder;
   background-color: azure;
 
@@ -145,3 +145,47 @@ div.container.center {
   align-items:center;
 }
 
+.carousel-item img {
+  width: 100%;
+}
+
+div.col {
+  display: flex;
+  justify-content:center;
+}
+
+.col.sm {
+  display: flex;
+  justify-content:flex-start;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .carousel-item img {
+    width: 100%;
+  }
+  .row.med {
+    margin-left: 0;
+  }
+  .col.sm {
+    display: flex;
+    justify-content:center;
+  }
+
+  a.fixed {
+    width: 95%;
+    background-color: $color-red;
+    border-radius: 10px;
+    padding: 2em 1em;
+    margin: 1em;
+    display: flex;
+    align-items:flex-end;
+    flex-direction: column;
+    text-decoration: none;
+    z-index: 0;
+  }
+  .btn.btn-danger.dropdown-toggle.olgabutton.wide-10{
+    width: 1em;
+  }
+
+}
