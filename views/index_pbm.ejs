@@ -25,12 +25,12 @@
               <input name="search" type="text"  aria-label="search-container"  placeholder="Search" class="search form-control text-field-styling olgabutton" >
           </div>
           <div class="btn-group ">
-            <button type="submit" class="btn btn-primary right-margin ">Search</button>
+            <button type="submit" class="btn btn-primary btn-lg right-margin ">Search</button>
           </div>
             </form>
 
             <div class="btn-group wide-10">
-              <button type="button" class="btn btn-danger dropdown-toggle olgabutton wide-10 " data-bs-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn btn-danger btn-lg dropdown-toggle wide-10 " data-bs-toggle="dropdown" aria-expanded="false">
                 Filter
               </button>
                 <ul class="dropdown-menu wide-10">
@@ -43,10 +43,10 @@
         </div>
 
         <!-- CAROUSEL ........................................................................-->
-        <div class="container-fluid">
-          <article class=" classy-article black">
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
+        <div class="container-fluid ">
+          <article class="black height-20">
+            <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+              <div class="carousel-inner height-20">
               <% for (let i = 0; i < Math.floor(items.length/3); i++) { %>
 
                 <% if (i === 0) { %>
@@ -55,21 +55,21 @@
                   <div class="carousel-item">
                 <% } %>
 
-                  <div class="row">
-                    <div class="col-4">
-                    <img class="d-block "
+                  <div class="row ">
+                    <div class="col-4 img-center">
+                    <img class="d-block height-100 "
                     src=<%= items[0 + 3*i].picture_url %>
                     alt=<%= items[0 + 3*i].title %>
                     >
                     </div>
-                    <div class="col-4">
-                    <img class="d-block "
+                    <div class="col-4 img-center">
+                    <img class="d-block height-100"
                     src=<%= items[1 + 3*i].picture_url %>
                     alt=<%= items[1 + 3*i].title %>
                     >
                     </div>
-                    <div class="col-4">
-                    <img class="d-block "
+                    <div class="col-4 img-center">
+                    <img class="d-block height-100"
                     src=<%= items[2 + 3*i].picture_url %>
                     alt=<%= items[2 + 3*i].title %>
                     >
@@ -86,18 +86,18 @@
       <!-- FEATURED POKEMON ...........................................................................-->
 
       <div class="container-fluid center">
-        <div class="container">
+
           <div class="row ">
             <div class="col sm">
               <h1 class="title-text">Featured Pokemon</h1>
             </div>
           </div>
-        </div>
+
       </div>
 <!-- FEATURED PICTURES ..........................................................................-->
 
-<div class="container-fluid">
-  <div class="container">
+<!-- <div class="container-fluid"> -->
+  <div class="container-fluid center">
     <div class="row">
 
       <% for (let i = 0; i < items.length; i++) { %>
@@ -110,18 +110,11 @@
             >
           </a>
         </div>
-        <% } %>
-    </div>
-
-    <div class="col">
-      <a class="btn btn-danger center" href="/home" role="button">Go Home</a>
+      <% } %>
 
     </div>
-    <br>
-
-  </main>
 </main>
-
+<%- include('partials/footer') %>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
