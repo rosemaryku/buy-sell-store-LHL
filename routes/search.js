@@ -16,47 +16,46 @@ const router  = express.Router();
 //   }
 module.exports = (db) => {
 
-  let searchq = "";
+
+  router.get("/", (req, res) => {
+    res.render("search", templateVars);
+  });
 
   router.post("/", (req, res) => {
+    console.log("POST")
 
-  let searchQuery = "";
 
-  const search = req.body.search;
+    const queryStr = `
+        SELECT * FROM items
+        WHERE title LIKE $1
 
-  searchQuery += '%';
-  searchQuery += search;
-  searchQuery += '%';
-  console.log("AFTER", searchQuery);
+        ;`
+    let value = "";
+    value += "%";
+    value += req.body.search;
+    value += "%";
 
-  searchq += searchQuery;
+    console.log("VALUE", value)
+
+    db.query(queryStr, [value])
+
+    .then(data => {
+    console.log("DATA", data.rows)
+    const items = data.rows;
+      const templateVars = {
+      items: items
+      }
+
+    res.render("search", templateVars);
+    })
+    .catch(err => {
+    res.status(500).json({ error: err.message });
+    });
 
   });
 
-
-
-  // not able to call on it
-  router.get("/", (req, res) => {
-
-    db.query(`SELECT * FROM items LIKE $1;`, searchq)
-    .then(data => {
-      const items = data.rows;
-      console.log("ITEMS", items);
-      const templateVars = {
-        items: items
-      }
-
-
-      res.render("search", templateVars);
-    })
-    .catch(err => {
-      res
-      .status(500)
-      .json({ error: err.message });
-    });
-  })
-  return router
-}
+  return router;
+};
 
 
 // ERROR: ReferenceError: app is not defined

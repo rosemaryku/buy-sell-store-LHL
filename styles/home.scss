@@ -15,6 +15,10 @@ background-color: black;
 
 }
 
+.black {
+  background-color: black;
+}
+
 .classy-article {
   width: 100%;
   display:flex;
@@ -40,18 +44,13 @@ a.featured:hover {
   filter: drop-shadow(10px 10px 4px black);
 }
 
-.carouselExampleControls {
-width: 50%;
-}
-
 .title-text {
-  justify-content:flex-start;
+  margin-top: 1em;
   font-weight:bolder;
   background-color: azure;
+
 }
-.title-text>h1 {
-  margin: 0;
-}
+
 
 .text-field-styling {
   padding: 1em;
@@ -74,13 +73,10 @@ width: 50%;
 .azure {
   color: azure;
 }
-//remove spaces for specificity
-// .carousel-item.active.horizontal-align {
-//   display:flex;
-// }
 
 .horizontal-align {
   display: flex;
+  justify-content: flex-start;
 }
 
 .search-container {
@@ -127,4 +123,62 @@ span.text {
   width: 100%;
 
 }
+.right-margin {
+  margin-right: 1em;
+}
 
+a.fixed {
+  width: 15em;
+  background-color: $color-red;
+  border-radius: 10px;
+  padding: 2em 1em;
+  margin: 1em;
+  display: flex;
+  align-items:flex-end;
+  flex-direction: column;
+  text-decoration: none;
+  z-index: 0;
+}
+
+div.container.center {
+  display: flex;
+  align-items:center;
+}
+
+.carousel-item img {
+  width: 100%;
+}
+
+div.col {
+  display: flex;
+  justify-content:center;
+}
+
+.col.sm {
+  display: flex;
+  justify-content:flex-start;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .carousel-item {
+    width: 100%;
+  }
+
+  .row.med {
+    margin-left: 0;
+  }
+  .col.sm {
+    display: flex;
+    justify-content:center;
+  }
+
+  a.fixed {
+    width: 95%;
+
+  }
+  .btn.btn-danger.dropdown-toggle.olgabutton.wide-10{
+    width: 1em;
+  }
+
+}

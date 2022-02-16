@@ -95,9 +95,6 @@ app.get("/", (req, res) => {
   res.render("example");
 });
 
-// app.post("/users/:id/listings/delete", (req, res) => {
-
-// })
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

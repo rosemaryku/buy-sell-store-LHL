@@ -20,30 +20,30 @@
         <div class="center-img">
           <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/079.png" alt="">
         </div>
-
         <div class="center">
-
-          <br>
-          <div class="center-input">
-            <input type="text" placeholder="NAME">
-          </div>
-          <br>
-          <div class="center-input">
-            <input type="text" placeholder="EMAIL">
-          </div>
-          <br>
-          <div class="center-input">
-        <input type="text" placeholder="PASSWORD">
+          <form class="form-inline-block" action="/register" method="POST">
+            <br>
+            <div class="center-input">
+              <input type="text" placeholder="NAME" name="new_name">
+            </div>
+            <br>
+            <div class="center-input">
+              <input type="text" placeholder="EMAIL" name="new_email">
+            </div>
+            <br>
+            <div class="center-input">
+              <input type="text" placeholder="PASSWORD" name="new_password">
+            </div>
+            <br>
+            <div class="center-input">
+              <input type="text" placeholder="PHONE NUMBER" name="new_phone">
+            </div>
+            <br>
+            <div class="center">
+              <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+          </form>
       </div>
-      <br>
-      <div class="center-input">
-        <input type="text" placeholder="PHONE NUMBER">
-      </div>
-      <br>
-      <div class="center">
-        <button type="button" class="btn btn-primary">Register</button>
-      </div>
-    </div>
     </main>
 
 
