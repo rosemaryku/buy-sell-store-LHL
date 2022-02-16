@@ -8,6 +8,10 @@ $(document).ready(function () {
     $(".fa-heart").addClass("favourited");
   });
 
+  $(".delete-fav").on("click", function() {
+    this.submit();
+  });
+
 });
 
 

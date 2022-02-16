@@ -15,14 +15,14 @@ module.exports = (db) => {
     db.query(queryStr, values)
       .then(data => {
         const items = data.rows;
-        console.log("ID:", req.params.id);
-        console.log(items);
+        // console.log("ID:", req.params.id);
+        // console.log(items);
         const templateVars = {
           items: items,
           itemId: req.params.id,
           userId: req.session.user_id
         };
-        console.log(templateVars);
+        // console.log(templateVars);
         res.render("users_favourites", templateVars);
       })
       .catch(err => {
@@ -47,6 +47,26 @@ module.exports = (db) => {
         res.status(500).json({ error: err.message });
       })
   });
+
+
+   router.delete("/favourites/:itemId/delete", (req, res) => {
+    console.log("deleting");
+    const queryStr = `
+      DELETE FROM favourites WHERE user_id = $1 AND item_id = $2;`
+    const values = [`${req.session.user_id}`, `${req.params.itemId}`];
+    console.log("Values:", values);
+    db.query(queryStr, values)
+      .then(data => {
+        // data.rows[0];
+        console.log("Deleted");
+        res.redirect('back');
+
+      })
+      .catch(err => {
+        res.status(500).json({ error: err.message });
+      })
+  });
+
 
   return router;
 };

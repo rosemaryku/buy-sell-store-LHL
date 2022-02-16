@@ -20,6 +20,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- App JS -->
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/items.js"></script>
   <title>Favourites</title>
 </head>
 <body>
@@ -50,8 +53,8 @@
         <td>$<%= item.price_per_item%></td>
         <td><%= item.quantity%> in stock</td>
         <td><%= (item.posted_at).toISOString().slice(0, 10); %></td>
-        <td><form action="/users/id/favourites/<%= items[0].items_id %>" method="DELETE">
-          Delete
+        <td><form class="delete-fav" method="POST" action="/users/favourites/<%= item.item_id %>/delete?_method=DELETE">
+          <i class="fa-solid fa-trash-can"></i>     Delete
          </form></td>
 
       </tr>
