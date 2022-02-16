@@ -43,7 +43,9 @@ module.exports = (db) => {
     console.log("DATA", data.rows)
     const items = data.rows;
       const templateVars = {
-      items: items
+      items: items,
+      userId: req.session.user_id,
+      userName: req.session.user_name
       }
 
     res.render("search", templateVars);
