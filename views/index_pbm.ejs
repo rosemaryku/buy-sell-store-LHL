@@ -44,8 +44,8 @@
 
         <!-- CAROUSEL ........................................................................-->
         <div class="container-fluid">
-          <article class=" classy-article">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <article class=" classy-article black">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
               <% for (let i = 0; i < Math.floor(items.length/3); i++) { %>
 
@@ -96,54 +96,30 @@
       </div>
 <!-- FEATURED PICTURES ..........................................................................-->
 
-<div class="container-fluid classy-article">
-  <div class="container ">
-    <div class="row med">
-      <% for (let i = 0; i < Math.floor(items.length/4); i++) { %>
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
 
-
+      <% for (let i = 0; i < items.length; i++) { %>
         <div class="col">
-          <a class="fixed" href="items/<%=items[0 + 4*i].id%>">
-            <span class="text"> $<%= items[0 + 4*i].price_per_item / 100 %></span>
-            <img class="featured-img"
-            src=<%= items[0 + 4*i].picture_url %>
-            alt=<%= items[0 + 4*i].title %>
+          <a class="fixed" href="items/<%=items[i].id%>">
+            <span class="text"> <%= items[i].title %></span>
+            <img class="rounded mx-auto d-block featured-img"
+            src=<%= items[i].picture_url %>
+            alt=<%= items[i].title %>
             >
           </a>
         </div>
-
-        <div class="col">
-          <a class="fixed" href="items/<%=items[1 + 4*i].id%>">
-            <span class="text"> $<%= items[1 + 4*i].price_per_item / 100 %></span>
-            <img class="featured-img"
-            src=<%= items[1 + 4*i].picture_url %>
-            alt=<%= items[1 + 4*i].title %>
-            >
-          </a>
-        </div>
-
-        <div class="col">
-          <a class="fixed" href="items/<%=items[2 + 4*i].id%>">
-            <span class="text"> $<%= items[2 + 4*i].price_per_item / 100 %></span>
-            <img class="featured-img"
-            src=<%= items[2 + 4*i].picture_url %>
-            alt=<%= items[2 + 4*i].title %>
-            >
-          </a>
-        </div>
-
-        <div class="col">
-          <a class="fixed" href="items/<%=items[3 + 4*i].id%>">
-            <span class="text"> $<%= items[3 + 4*i].price_per_item / 100 %></span>
-            <img class="featured-img"
-            src=<%= items[3 + 4*i].picture_url %>
-            alt=<%= items[3 + 4*i].title %>
-            >
-          </a>
-        </div>
-      <% } %>
+        <% } %>
     </div>
-  </div>
+
+    <div class="col">
+      <a class="btn btn-danger center" href="/home" role="button">Go Home</a>
+
+    </div>
+    <br>
+
+  </main>
 </main>
 
 

@@ -15,6 +15,10 @@ background-color: black;
 
 }
 
+.black {
+  background-color: black;
+}
+
 .classy-article {
   width: 100%;
   display:flex;
@@ -69,10 +73,6 @@ a.featured:hover {
 .azure {
   color: azure;
 }
-//remove spaces for specificity
-// .carousel-item.active.horizontal-align {
-//   display:flex;
-// }
 
 .horizontal-align {
   display: flex;
@@ -161,9 +161,10 @@ div.col {
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
-  .carousel-item img {
+  .carousel-item {
     width: 100%;
   }
+
   .row.med {
     margin-left: 0;
   }
@@ -174,15 +175,7 @@ div.col {
 
   a.fixed {
     width: 95%;
-    background-color: $color-red;
-    border-radius: 10px;
-    padding: 2em 1em;
-    margin: 1em;
-    display: flex;
-    align-items:flex-end;
-    flex-direction: column;
-    text-decoration: none;
-    z-index: 0;
+
   }
   .btn.btn-danger.dropdown-toggle.olgabutton.wide-10{
     width: 1em;
