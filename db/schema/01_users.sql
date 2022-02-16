@@ -6,5 +6,5 @@ CREATE TABLE users (
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
-  phone_number VARCHAR(10),
+  phone_number VARCHAR(10) NOT NULL
 );

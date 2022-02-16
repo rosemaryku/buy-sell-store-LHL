@@ -1,11 +1,7 @@
 main {
-  // display: flex;
   width: 100%;
   justify-content: center;
-  // background-color: rgb(212, 82, 82);
   display: flex;
-
-
 }
 
 .center-main {
@@ -17,10 +13,7 @@ main {
 
 .center {
   align-items: center;
-
-  // margin: 1em;
   justify-content: center;
-  // padding: 2em 2em;
   background-color: white
 }
 
@@ -30,7 +23,6 @@ background-color: rgb(168, 29, 29);
 align-content: center;
 justify-content: center;
 width: 100%;
-// margin: 1em;
 }
 
 .center-img {
@@ -51,11 +43,8 @@ justify-content: center;
 }
 
 img {
-// background-color: rgb(255, 0, 0);
-justify-content: center;
-align-items: center;
 width: 25em;
-margin-right: 2em;
+margin-right: 3em;
 
 }
 input {
@@ -71,8 +60,7 @@ align-items: center;
 width: 13em;
 }
 
-// .override {
-
-//   align-items: center;
-//   justify-content: center;
-// }
+label {
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
