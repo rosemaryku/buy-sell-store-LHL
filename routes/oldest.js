@@ -14,9 +14,10 @@ module.exports = (db) => {
    // TODO edit to to prevent SQL injection
   db.query(`SELECT * FROM items ORDER BY posted_at;`)
   .then(data => {
+
     const items = data.rows;
     const templateVars = {
-      items: items
+      items: items,
     }
 
     res.render("oldest", templateVars);

@@ -99,19 +99,25 @@
 <!-- <div class="container-fluid"> -->
   <div class="container-fluid center">
     <div class="row sized">
-
       <% for (let i = 0; i < items.length; i++) { %>
         <div class="col">
           <a class="fixed left-right-padding top-bottom-padding " href="items/<%=items[i].id%>">
-            <span class="text left-right-padding"> <%= items[i].title %></span>
+            <span class="text-names left-right-padding"> <%= items[i].title %></span>
             <img class="rounded mx-auto d-block featured-img"
             src=<%= items[i].picture_url %>
             alt=<%= items[i].title %>
             >
+            <div class="text-wrap left-right-padding">
+              <span class="text-sm">
+                Posted on:
+              </span>
+              <span class="text-med">
+                <%= moment(items[i].posted_at).subtract(10, 'days').format('ll') %>
+              </span>
+            </div>
           </a>
         </div>
       <% } %>
-
     </div>
 </main>
 <%- include('partials/footer') %>

@@ -118,14 +118,47 @@ section {
 
 
 // }
-.text {
+.text-wrap {
+
+  background-color: white;
+  border-radius: 2em;
+}
+.text-date {
+
+  font-size: 1.6em;
+  font-weight: 600;
+  color:black;
+  border-radius: 0.5em;
+}
+
+.text-sm {
+
+  font-size: 0.8em;
+  font-weight: 600;
+  color:black;
+
+  align-self:center;
+
+}
+.text-med {
+
+  font-size: 1em;
+  font-weight: 600;
+  color:black;
+
+  align-self:center;
+
+}
+
+.text-names {
 
   font-size: 2em;
   font-weight: 600;
-  color:black;
-  padding: 10 0 1 0em;
-  background-color: white;
-  border-radius: 2em;
+  color:white;
+  // background-color: white;
+  // border-radius: 2em;
+  // margin-bottom: 0.5em;
+
 }
 .featured-img {
 
