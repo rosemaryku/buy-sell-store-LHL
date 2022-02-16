@@ -18,21 +18,13 @@ background-color: black;
 .black {
   background-color: black;
 }
+.styled-ul{
+  list-style-type:none
+}
 
-// .classy-article {
-//   width: 100%;
-//   display:flex;
-//   justify-content: center;
-// }
-// .container-carousel {
-
-//   position: relative;
-//   background-color: azure;
-//   display: flex;
-//   align-content: space-between;
-//   justify-content: space-between;
-//   width: 100%;
-// }
+ul.horizontal-align.black.styled-ul {
+  margin: 0;
+}
 
 section {
   padding: 2em 0;
@@ -40,9 +32,13 @@ section {
 }
 
 
-a.featured:hover {
-  filter: drop-shadow(10px 10px 4px black);
+.shrink-img {
+  width: 1em;
+  height: 1em;
+  margin-bottom: 0.2em;
 }
+
+
 
 .title-text {
   margin-top: 1em;
@@ -268,6 +264,15 @@ div.col {
   }
   .search-container.horizontal-align {
     padding: 1em;
+  }
+  ul.navbar-nav.ms-auto.force {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .container.center {
+    margin: 0;
   }
 
 }
