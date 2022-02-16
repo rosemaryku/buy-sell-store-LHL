@@ -50,8 +50,9 @@
       <tr>
         <td><img class ="pokemon-small" src="<%= item.picture_url%>"></td>
         <td><a href="/items/<%= item.item_id%>" class="fav-link"><%= item.title%></a></td>
-        <td>$<%= item.price_per_item%></td>
-        <td><%= item.quantity%> in stock</td>
+        <!-- <td>$<%= item.price_per_item / 100 %></td> -->
+        <td>$<%= item.price_per_item / 100 %></td>
+        <td><%= item.quantity%> available</td>
         <td><%= (item.posted_at).toISOString().slice(0, 10); %></td>
         <td><form class="delete-fav" method="POST" action="/users/favourites/<%= item.item_id %>/delete?_method=DELETE">
           <i class="fa-solid fa-trash-can"></i> Delete

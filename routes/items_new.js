@@ -13,7 +13,6 @@ module.exports = (db) => {
       values
     ).then(data => {
       const items = data.rows;
-      // console.log("items:", items);
       const templateVars = {
         items: items,
         userId: req.session.user_id,
@@ -31,7 +30,7 @@ module.exports = (db) => {
   router.post("/items", (req, res) => {
     const queryStr = `
       INSERT INTO items (owner_id, title, quantity, price_per_item, description, picture_url)
-      VALUES ($1, $2, $3, $4, $5, $6)
+      VALUES ($1, $2, $3, $4 * 100, $5, $6)
       RETURNING *`;
 
     const values = [`${req.session.user_id}`, `${req.body.name}`, `${req.body.quantity}`, `${req.body.price}`, `${req.body.desc}`, `${req.body.imageUrl}`];

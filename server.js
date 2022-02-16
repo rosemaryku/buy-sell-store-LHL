@@ -51,8 +51,6 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
-const widgetsRoutes = require("./routes/widgets");
-const apiItemsRoutes = require("./routes/items_api");
 const itemsNewRoutes = require("./routes/items_new");
 const itemsIdRoutes = require("./routes/items_id");
 const usersIdFavouritesRoutes = require("./routes/users_id_favourites");
@@ -60,6 +58,7 @@ const usersIdListingsRoutes = require("./routes/users_id_listings");
 const usersIdMessagesRoutes = require("./routes/users_id_messages");
 const homeRoutes = require("./routes/home");
 const loginRoutes = require("./routes/login");
+const logoutRoutes = require("./routes/logout");
 const registerRoutes = require("./routes/register");
 const homeHighestRoutes = require("./routes/highest");
 const homeLowestRoutes = require("./routes/lowest");
@@ -69,8 +68,6 @@ const searchRoutes = require("./routes/search");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
-app.use("/api/widgets", widgetsRoutes(db));
-app.use("/api/items", apiItemsRoutes(db));
 app.use("/users", itemsNewRoutes(db));
 app.use("/items", itemsIdRoutes(db));
 app.use("/users", usersIdListingsRoutes(db));
@@ -78,6 +75,7 @@ app.use("/users", usersIdFavouritesRoutes(db));
 app.use("/users", usersIdMessagesRoutes(db));
 app.use("/home", homeRoutes(db));
 app.use("/login", loginRoutes(db));
+app.use("/logout", logoutRoutes(db));
 app.use("/register", registerRoutes(db));
 app.use("/highest", homeHighestRoutes(db));
 app.use("/lowest", homeLowestRoutes(db));

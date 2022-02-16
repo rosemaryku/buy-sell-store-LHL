@@ -3,24 +3,21 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/:id/favourites", (req, res) => {
-    const queryStr = `SELECT DISTINCT user_id, item_id, picture_url, title, price_per_item, quantity, posted_at
-    FROM favourites
-    JOIN items ON item_id = items.id
-    WHERE user_id = $1
-    ;`
+    const queryStr = `
+      SELECT DISTINCT user_id, item_id, picture_url, title, price_per_item, quantity, posted_at
+      FROM favourites
+      JOIN items ON item_id = items.id
+      WHERE user_id = $1;`
     const values = [`${req.session.user_id}`];
     db.query(queryStr, values)
       .then(data => {
         const items = data.rows;
-        // console.log("ID:", req.params.id);
-        // console.log("ITEMS:", items);
         const templateVars = {
           items: items,
           itemId: req.params.id,
           userId: req.session.user_id,
           userName: req.session.user_name
         };
-        // console.log("TEMPLATE VARS:", templateVars);
         res.render("users_favourites", templateVars);
       })
       .catch(err => {
@@ -30,15 +27,16 @@ module.exports = (db) => {
       });
   });
 
-
   router.post("/:id/favourites/:itemId", (req, res) => {
-    const queryStr = `INSERT INTO favourites (user_id, item_id)
+    const queryStr = `
+      INSERT INTO favourites (user_id, item_id)
       VALUES ($1, $2)
       RETURNING *;`;
     const values = [`${req.session.user_id}`, `${req.params.itemId}`];
     db.query(queryStr, values)
       .then(data => {
         data.rows[0];
+        res.redirect(`/users/${req.session.user_id}/favourites`)
       })
       .catch(err => {
         res.status(500).json({ error: err.message });
