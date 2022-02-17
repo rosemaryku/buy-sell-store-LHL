@@ -74,11 +74,11 @@ section {
   justify-content: flex-end;
 }
 .height-100 {
-  height: 20em;
-  width: 20em;
+  height: 25em;
+  width: 25em;
 }
 .height-20 {
-  height:20em;
+  height:25em;
   width: 100%;
 }
 .azure {
@@ -99,7 +99,7 @@ section {
   width: 100%;
   background-color: whitesmoke;
   justify-content: center;
-  padding:  2rem;
+  padding:  1rem;
 
 }
 
@@ -111,20 +111,6 @@ section {
 
 }
 
-// a.featured {
-//   width: 20%;
-//   background-color: $color-red;
-//   border-radius: 10px;
-
-//   margin: 1em;
-//   display: flex;
-//   align-items:flex-end;
-//   flex-direction: column;
-//   text-decoration: none;
-//   z-index: 0;
-
-
-// }
 .text-wrap {
 
   align-self: baseline;
@@ -143,18 +129,10 @@ section {
   border-radius: 0.5em;
 }
 
-.text-sm {
 
-  font-size: 0.8em;
-  font-weight: 600;
-  color:black;
-
-
-
-}
 .text-med {
 
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: 600;
   color:black;
 
@@ -164,7 +142,7 @@ section {
 
 .text-names {
 
-  font-size: 2em;
+  font-size: 3em;
   font-weight: 600;
   color:white;
   // background-color: white;
@@ -229,13 +207,9 @@ div.col {
 }
 
 @media only screen and (max-width: 1024px) {
-  /* For mobile phones: */
-  // .carousel-item {
-  //   width: 100%;
-  // }
-  // .carousel-item.active {
-  //   width: 100%;
-  // }
+  .text-med {
+    font-size: 1em;
+  }
 
   .row.med {
     margin-left: 0;
@@ -259,15 +233,13 @@ div.col {
     width: 100%;
   }
   .btn.btn-danger.btn-lg.dropdown-toggle.wide-10 {
-    width: 6rem;
+    width: 2rem;
 
   }
   .right-margin {
     margin-right: 0.4em;
   }
-  .text-field-styling {
-    width: 2em;
-  }
+  
   .search-input-size {
 
     margin-right: 0.5em;
@@ -275,6 +247,12 @@ div.col {
   }
   .navbar>.container-fluid.flex-end{
     justify-content: flex-start;
+
+  }
+  .text-names {
+
+  font-size: 2em;
+
 
   }
 
@@ -315,9 +293,9 @@ div.col {
     padding-right: 0;
     padding-left: 0;
   }
-  .search-container.horizontal-align {
-    padding: 1em;
-  }
+  // .search-container.horizontal-align {
+  //   padding: 1em;
+  // }
   ul.navbar-nav.ms-auto.force {
     width: 100%;
     display: flex;
