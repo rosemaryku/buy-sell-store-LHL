@@ -97,7 +97,11 @@
           <p><b> Quantity:</b> <%= items[0].quantity %></p>
           <p><b> Description: </b> <%= items[0].description %></p>
           <p><b> Seller Name: </b> <%= items[0].name %></p>
-          <p><b> Seller Phone Number:</b> <%= items[0].phone_number %></p>
+          <p>
+            <b> Seller Phone Number:</b> <%=
+            (items[0].phone_number).replace(/(\d{3})(\d{3})(\d{4})/,"($1)-$2-$3")
+            %>
+          </p>
           <p>
             <b> Seller Email: </b> <%= items[0].email %>
             <a
