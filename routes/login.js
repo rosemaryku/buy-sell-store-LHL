@@ -1,39 +1,24 @@
-/*
- * All routes for Users are defined here
- * Since this file is loaded in server.js into api/users,
- *   these routes are mounted onto /users
- * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
- */
-
-const express = require('express');
-const users = require('./users');
-const router  = express.Router();
+const express = require("express");
+const router = express.Router();
 
 module.exports = (db) => {
-
   router.get("/", (req, res) => {
     res.render("login");
   });
 
-  // Submit login
-  router.post("", (req, res) => {
+  router.post("/", (req, res) => {
     const queryStr = `SELECT * FROM users WHERE email = $1;`;
     const values = [`${req.body.email}`];
-
     db.query(queryStr, values)
-      .then(data => {
+      .then((data) => {
         const userId = data.rows[0].id;
         req.session.user_id = userId;
         req.session.user_name = data.rows[0].name;
-        res.redirect(`users/${userId}/items/new`);
+        res.redirect("/home");
       })
-      .catch(err => {
-        res.status(500).send("Wrong email");
+      .catch((err) => {
+        res.status(500).send("Wrong usernamer or password, please try again");
       });
   });
-
-
   return router;
-
-
 };

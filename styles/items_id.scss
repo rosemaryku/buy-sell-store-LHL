@@ -21,7 +21,7 @@ body {
 .left-container {
   display: flex;
   flex-direction: column;
-  margin-right:40px;
+  margin-right: 40px;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -55,23 +55,21 @@ body {
 }
 
 .favourited {
-  color:#dd2525;
+  color: #dd2525;
 }
-
 
 .fa-heart:hover {
   color: #dd2525;
   cursor: pointer;
   transform: scale(1.1);
-
 }
 
 .email-icon {
-  color: #000000
+  color: #000000;
 }
 
 .email-icon:hover {
-  color:#3639ec;
+  color: #3639ec;
   cursor: pointer;
   transform: scale(1.2);
 }
@@ -80,7 +78,6 @@ body {
   background-color: red;
   display: none;
 }
-
 
 @media (max-width: 1350px) {
   main {
@@ -91,4 +88,3 @@ body {
     flex-direction: column;
   }
 }
-

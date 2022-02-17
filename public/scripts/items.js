@@ -2,8 +2,7 @@ $(() => {
 
   console.log("Ready");
 
-  // Change heart colour when favourited and submit favourite
-  $(".favHeart").one("dblclick", function() {
+  $(".favHeart").one("click", function() {
     this.submit();
     $(".fa-heart").addClass("favourited");
   });
@@ -12,9 +11,11 @@ $(() => {
     this.submit();
   });
 
-  $("favHeart").on("dblclick", function(event) {
-    event.presentDefault();
-  })
+
+  $(".nav-logout").on("click", function() {
+    console.log("logging out");
+    req.session["user_id"] = null;
+  });
 
 
 });

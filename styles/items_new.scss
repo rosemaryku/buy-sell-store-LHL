@@ -6,19 +6,17 @@ body {
   background-position: 99% 95%;
 }
 
-main {
+.new-main {
   margin: 50px 300px;
 }
 
-form {
+.new-poke {
   padding: 2em 3em;
   background-color: #e9e7e7;
 }
 
-
 @media (max-width: 1024px) {
-  main {
+  .new-main {
     margin: 20px 20px;
   }
 }
-
