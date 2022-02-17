@@ -48,6 +48,14 @@ app.use(
 
 app.use(express.static("public"));
 
+const moment = require("moment");
+
+app.use((req, res, next)=>{
+    res.locals.moment = moment;
+    next();
+  });
+
+
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");

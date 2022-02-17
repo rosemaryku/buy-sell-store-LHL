@@ -36,12 +36,9 @@
           </div>
           <div class="col-md-auto">
           </div>
-          <div class="col col-lg-2">
-            <a class="btn btn-danger" href="/home" role="button">Go Home</a>
-          </div>
         </div>
       </div>
-  </div>
+    </div>
 
   <% } else { %>
 
@@ -61,31 +58,37 @@
 
     <!-- FEATURED PICTURES ..........................................................................-->
 
-  <div class="container-fluid">
-    <div class="container">
-      <div class="row">
-
+    <div class="container-fluid center">
+      <div class="row sized">
         <% for (let i = 0; i < items.length; i++) { %>
           <div class="col">
-            <a class="fixed" href="items/<%=items[i].id%>">
-              <span class="text"> <%= items[i].title %></span>
-              <img class="rounded mx-auto d-block featured-img"
+
+            <a class="fixed left-right-padding top-bottom-padding " href="items/<%=items[i].id%>">
+              <div class="card-header text-names "><%= items[i].title %></div>
+
+              <img class="mx-auto d-block featured-img"
               src=<%= items[i].picture_url %>
               alt=<%= items[i].title %>
               >
+              <div class=" text-wrap left-right-padding featured-img ">
+                <span class="text-med">
+                  Posted: &nbsp;
+                </span>
+                <span class="text-med">
+                  <%= moment(items[i].posted_at).subtract(10, 'days').format('ll') %>
+                </span>
+              </div>
             </a>
           </div>
-          <% } %>
-      </div>
-
-      <div class="col">
-        <a class="btn btn-danger center" href="/home" role="button">Go Home</a>
-
+        <% } %>
       </div>
       <br>
+      <br>
+      <br>
+      <br>
+
 
     </main>
-
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
@@ -99,8 +102,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <%- include('partials/footer') %>
   </body>
+
+
 </html>
 
