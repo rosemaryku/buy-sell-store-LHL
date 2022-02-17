@@ -40,7 +40,7 @@ module.exports = (db) => {
     db.query(queryStr, [value])
 
     .then(data => {
-    console.log("DATA", data.rows)
+    // console.log("DATA", data.rows)
     const items = data.rows;
       const templateVars = {
       items: items,
