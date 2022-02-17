@@ -16,34 +16,54 @@
 
     <main >
       <div class="master-main center-main">
-
         <div class="center-img">
           <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/079.png" alt="">
+
         </div>
+
         <div class="center">
-          <form class="form-inline-block" action="/register" method="POST">
-            <br>
-            <div class="center-input">
-              <input type="text" placeholder="NAME" name="new_name">
-            </div>
-            <br>
-            <div class="center-input">
-              <input type="text" placeholder="EMAIL" name="new_email">
-            </div>
-            <br>
-            <div class="center-input">
-              <input type="text" placeholder="PASSWORD" name="new_password">
-            </div>
-            <br>
-            <div class="center-input">
-              <input type="text" placeholder="PHONE NUMBER" name="new_phone">
-            </div>
-            <br>
-            <div class="center">
+         <h3> Register for Black Market Pokemon! </h3>
+          <form action="/register" method="POST">
+            <div class="form-group mb-2">
+              <label for="new_name">Name:</label>
+              <input
+                class="form-control"
+                type="text"
+                name="new_name"
+                style="width: 400px"
+              />
+              <label for="new_name">Email:</label>
+              <input
+                class="form-control"
+                type="text"
+                name="new_email"
+                style="width: 400px"
+              />
+              <label for="password">Password:</label>
+              <input
+                class="form-control"
+                type="password"
+                name="new_password"
+                style="width: 400px"
+              />
+              <label for="password">Phone Number:</label>
+              <input
+                class="form-control"
+                type="text"
+                name="new_phone"
+                style="width: 400px"
+              />
+              <br />
               <button type="submit" class="btn btn-primary">Register</button>
             </div>
           </form>
-      </div>
+        </br>
+          <div class="center">
+           Already registered? <a href="/login">Login</a>
+          </div>
+          <br>
+          </div>
+        </div>
     </main>
 
 

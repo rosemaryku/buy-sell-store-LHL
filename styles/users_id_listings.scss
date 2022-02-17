@@ -1,5 +1,8 @@
 body {
 ul.listings-ul {
+  align-items: center;
+}
+.listings-li {
   border-style: double;
   display:flex;
   justify-content: space-around;

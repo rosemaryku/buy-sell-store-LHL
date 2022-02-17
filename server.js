@@ -7,6 +7,21 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const cookieSession = require('cookie-session');
+const methodOverride = require('method-override')
+
+
+// Cookies
+app.use(cookieSession({
+  name: 'session',
+  keys: ["key1", "key2"],
+}))
+app.use(methodOverride('_method'));
+
+
+
+
+
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -44,8 +59,6 @@ app.use((req, res, next)=>{
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
-const widgetsRoutes = require("./routes/widgets");
-const apiItemsRoutes = require("./routes/items_api");
 const itemsNewRoutes = require("./routes/items_new");
 const itemsIdRoutes = require("./routes/items_id");
 const usersIdFavouritesRoutes = require("./routes/users_id_favourites");
@@ -53,6 +66,7 @@ const usersIdListingsRoutes = require("./routes/users_id_listings");
 const usersIdMessagesRoutes = require("./routes/users_id_messages");
 const homeRoutes = require("./routes/home");
 const loginRoutes = require("./routes/login");
+const logoutRoutes = require("./routes/logout");
 const registerRoutes = require("./routes/register");
 const homeHighestRoutes = require("./routes/highest");
 const homeLowestRoutes = require("./routes/lowest");
@@ -62,15 +76,14 @@ const searchRoutes = require("./routes/search");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
-app.use("/api/widgets", widgetsRoutes(db));
-app.use("/api/items", apiItemsRoutes(db));
-app.use("/items/new", itemsNewRoutes(db));
+app.use("/users", itemsNewRoutes(db));
 app.use("/items", itemsIdRoutes(db));
-app.use("/users/:id/listings", usersIdListingsRoutes(db));
-app.use("/users/:id/favourites", usersIdFavouritesRoutes(db));
-app.use("/users/:id/messages", usersIdMessagesRoutes(db));
+app.use("/users", usersIdListingsRoutes(db));
+app.use("/users", usersIdFavouritesRoutes(db));
+app.use("/users", usersIdMessagesRoutes(db));
 app.use("/home", homeRoutes(db));
 app.use("/login", loginRoutes(db));
+app.use("/logout", logoutRoutes(db));
 app.use("/register", registerRoutes(db));
 app.use("/highest", homeHighestRoutes(db));
 app.use("/lowest", homeLowestRoutes(db));

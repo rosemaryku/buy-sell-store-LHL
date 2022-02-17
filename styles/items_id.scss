@@ -1,6 +1,13 @@
 main {
-  margin: 10em 5em;
-  padding: 5em 10em;
+  margin: 50px 300px;
+}
+
+body {
+  background-image: url("https://seeklogo.com/images/P/Pokemon-logo-497D61B223-seeklogo.com.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 15%;
+  background-position: 98% 95%;
 }
 
 .pokemon-container {
@@ -14,7 +21,8 @@ main {
 .left-container {
   display: flex;
   flex-direction: column;
-  margin-right:40px;
+  margin-right: 40px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -47,12 +55,36 @@ main {
 }
 
 .favourited {
-  color:#dd2525;
+  color: #dd2525;
 }
-
 
 .fa-heart:hover {
   color: #dd2525;
   cursor: pointer;
+  transform: scale(1.1);
 }
 
+.email-icon {
+  color: #000000;
+}
+
+.email-icon:hover {
+  color: #3639ec;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.sent-prompt {
+  background-color: red;
+  display: none;
+}
+
+@media (max-width: 1350px) {
+  main {
+    margin: 20px 20px;
+  }
+
+  .pokemon-container {
+    flex-direction: column;
+  }
+}

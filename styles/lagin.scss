@@ -1,11 +1,7 @@
 main {
-  // display: flex;
   width: 100%;
   justify-content: center;
-  // background-color: rgb(212, 82, 82);
   display: flex;
-
-
 }
 
 .center-main {
@@ -17,10 +13,8 @@ main {
 
 .center {
   align-items: center;
-  // margin: 1em;
   justify-content: center;
-  padding: 2em 4em;
-  background-color: rgb(0, 0, 0);
+  background-color: white
 }
 
 .center-input {
@@ -29,7 +23,6 @@ background-color: rgb(168, 29, 29);
 align-content: center;
 justify-content: center;
 width: 100%;
-// margin: 1em;
 }
 
 .center-img {
@@ -45,16 +38,13 @@ width: 90%;
 background-color: white;
 display: flex;
 align-items: center;
-justify-content: space-around;
+justify-content: center;
 
 }
 
 img {
-background-color: rgb(255, 0, 0);
-justify-content: center;
-align-items: center;
 width: 25em;
-margin-right: 2em;
+margin-right: 3em;
 
 }
 input {
@@ -70,8 +60,7 @@ align-items: center;
 width: 13em;
 }
 
-// .override {
-
-//   align-items: center;
-//   justify-content: center;
-// }
+label {
+  margin-top: 10px;
+  margin-bottom: 4px;
+}

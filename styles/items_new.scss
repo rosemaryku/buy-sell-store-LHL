@@ -1,10 +1,22 @@
-main {
-  margin: 10em 5em;
-  padding: 5em 10em;
+body {
+  background-image: url("https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-blue-version/8/89/Pikachu.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 20%;
+  background-position: 99% 95%;
 }
 
-form {
+.new-main {
+  margin: 50px 300px;
+}
+
+.new-poke {
   padding: 2em 3em;
   background-color: #e9e7e7;
 }
 
+@media (max-width: 1024px) {
+  .new-main {
+    margin: 20px 20px;
+  }
+}

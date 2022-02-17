@@ -1,13 +1,25 @@
-$(document).ready(function () {
+$(() => {
 
   console.log("Ready");
 
-  // Change heart colour when favourited
-  $(".fa-heart").on("click", () => {
-    $(".fa-heart").toggleClass("favourited");
+  $(".favHeart").one("click", function() {
+    this.submit();
+    $(".fa-heart").addClass("favourited");
+  });
+
+  $(".delete-fav").on("click", function() {
+    this.submit();
   });
 
 
+  $(".nav-logout").on("click", function() {
+    console.log("logging out");
+    req.session["user_id"] = null;
   });
+
+
+});
+
+
 
 

@@ -22,35 +22,37 @@ module.exports = (db) => {
   });
 
   router.post("/", (req, res) => {
-    console.log("POST")
+    console.log("POST");
 
 
     const queryStr = `
         SELECT * FROM items
         WHERE title LIKE $1
 
-        ;`
+        ;`;
     let value = "";
     value += "%";
     value += req.body.search;
     value += "%";
 
-    console.log("VALUE", value)
+    console.log("VALUE", value);
 
     db.query(queryStr, [value])
 
-    .then(data => {
-    // console.log("DATA", data.rows)
-    const items = data.rows;
-      const templateVars = {
-      items: items
-      }
+      .then(data => {
+        console.log("DATA", data.rows);
+        const items = data.rows;
+        const templateVars = {
+          items: items,
+          userId: req.session.user_id,
+          userName: req.session.user_name
+        };
 
-    res.render("search", templateVars);
-    })
-    .catch(err => {
-    res.status(500).json({ error: err.message });
-    });
+        res.render("search", templateVars);
+      })
+      .catch(err => {
+        res.status(500).json({ error: err.message });
+      });
 
   });
 

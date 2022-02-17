@@ -12,20 +12,22 @@ module.exports = (db) => {
 
   router.get("/", (req, res) => {
 
-  db.query(`SELECT * FROM items ORDER BY price_per_item;`)
-  .then(data => {
-    const items = data.rows;
-    const templateVars = {
-      items: items
-    }
+    db.query(`SELECT * FROM items ORDER BY price_per_item;`)
+      .then(data => {
+        const items = data.rows;
+        const templateVars = {
+          items: items,
+          userId: req.session.user_id,
+          userName: req.session.user_name
+        };
 
-    res.render("lowest", templateVars);
-    })
-    .catch(err => {
-    res
-      .status(500)
-      .json({ error: err.message });
-    });
+        res.render("lowest", templateVars);
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
   });
 
   return router;

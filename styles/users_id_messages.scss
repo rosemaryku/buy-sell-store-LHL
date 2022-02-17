@@ -1,5 +1,5 @@
 body {
-section.messages {
+div.messages {
   display: flex;
   justify-content: space-between;
   margin-left: 4em;
@@ -7,6 +7,9 @@ section.messages {
 }
 form.messages-text-box {
   display: flex;
+}
+.messages-pokemon-image {
+  height: 200px
 }
 .messages-title-left {
   text-align: center;
