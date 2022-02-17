@@ -8,10 +8,10 @@ justify-content: center;
 }
 
 .master {
-width: 95rem;
-background-color: $color-red;
-position: absolute;
-background-color: black;
+  width: 95rem;
+  background-color: $color-red;
+  position: absolute;
+  background-color: black;
 
 }
 
@@ -73,17 +73,17 @@ section {
 .navbar>.container-fluid.flex-end{
   justify-content: flex-end;
 }
-.height-100 {
-  height: 25em;
-  width: 25em;
-}
 .height-20 {
   height:25em;
   width: 100%;
 }
-.azure {
-  color: azure;
+.height-100 {
+  height: 25em;
+  width: 25em;
 }
+// .azure {
+//   color: azure;
+// }
 
 .horizontal-align {
   display: flex;
@@ -105,12 +105,19 @@ section {
 
 .search-input-size {
   width: 60%;
-  border: #FF0000 solid 3px;
-  border-radius: 10px;
-  margin-right: 2em;
+  border: #FF0000 3px;
+  align-self: center;
+
+  outline: none;
 
 }
 
+input.search.form-control {
+  width: 98%;
+  border: #FF0000 solid 3px;
+  border-radius: 10px;
+  outline: none;
+}
 .text-wrap {
 
   align-self: baseline;
@@ -176,8 +183,7 @@ a.fixed {
 .left-right-padding {
 padding-left: 0.5em;
 padding-right: 0.5em;
-margin-left: 0.1em;
-margin-right: 0.1em;
+
 }
 
 .top-bottom-padding {
@@ -210,6 +216,12 @@ div.col {
   .text-med {
     font-size: 1em;
   }
+  .search-input-size {
+    outline: none;
+    margin-right: 0.5em;
+    border: none;
+
+  }
 
   .row.med {
     margin-left: 0;
@@ -228,10 +240,7 @@ div.col {
     height:100%;
     width: 100%;
   }
-  .height-100 {
-    height:100%;
-    width: 100%;
-  }
+
   .btn.btn-danger.btn-lg.dropdown-toggle.wide-10 {
     width: 2rem;
 
@@ -239,12 +248,7 @@ div.col {
   .right-margin {
     margin-right: 0.4em;
   }
-  
-  .search-input-size {
 
-    margin-right: 0.5em;
-
-  }
   .navbar>.container-fluid.flex-end{
     justify-content: flex-start;
 
