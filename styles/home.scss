@@ -73,13 +73,13 @@ section {
 .navbar>.container-fluid.flex-end{
   justify-content: flex-end;
 }
-.height-20 {
-  height:25em;
-  width: 100%;
-}
 .height-100 {
-  height: 25em;
-  width: 25em;
+  height: 20em;
+  width: 20em;
+}
+.height-20 {
+  height:20em;
+  width: 100%;
 }
 // .azure {
 //   color: azure;
@@ -237,6 +237,10 @@ div.col {
   }
 
   .height-20 {
+    height:100%;
+    width: 100%;
+  }
+  .height-100 {
     height:100%;
     width: 100%;
   }
