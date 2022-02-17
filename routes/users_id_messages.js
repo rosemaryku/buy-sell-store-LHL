@@ -28,15 +28,21 @@ module.exports = (db) => {
   router.get("/:id/messages/:itemId", (req, res) => {
     const values = [req.params.id, req.params.itemId];
     db.query(
-      `(SELECT * FROM items
+      // `(SELECT * FROM items
+      // WHERE owner_id = $1
+      // AND items.id = $2)`,
+      `select *
+      from messages
+      join items on items.id = item_id
+      join users on users.id = owner_id
       WHERE owner_id = $1
-      AND items.id = $2)`,
+      AND items.id = $2`,
       values)
       .then(data => {
-        const items = data.rows;
-        console.log("ID:", items);
+        const messages = data.rows;
+        console.log("ID:", messages);
         const templateVars = {
-          items: items,
+          messages: messages,
           userId: req.session.user_id,
           itemId: req.params.itemId,
           userName: req.session.user_name
