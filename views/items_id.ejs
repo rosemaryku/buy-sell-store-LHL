@@ -8,7 +8,12 @@
     />
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
     <!-- Font awesome for icons -->
     <link
@@ -20,87 +25,126 @@
     />
 
     <!-- App CSS -->
-     <link rel="stylesheet" href="/styles/items_id.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/items_id.css" type="text/css" />
 
     <!-- App JS -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/items.js"></script>
-
 
     <title>Pokemon Page</title>
   </head>
 
   <body>
     <%- include('partials/nav_bar') %>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
     <main>
       <div class="pokemon-container">
         <div class="left-container">
-
           <!-- Toggle Sold Marker  -->
           <% if (items[0].sold) { %>
-          <span id=soldMarker> <b>SOLD</b> </span>
+          <span id="soldMarker"> <b>SOLD</b> </span>
           <% } %>
 
-          <span><img id="poke-pic"
-            src= <%= items[0].picture_url %>
-           alt=" <%= items[0].title%>">
-        </span>
+          <!-- //  -->
 
+          <span>
+            <img id="poke-pic" src="<%= items[0].picture_url %>" alt="<%=
+            items[0].title %>"
+          </span>
+
+          <!-- // -->
           <div class="poke-name">
             <span><%= items[0].title %></span>
 
-             <!-- Favourite Heart  -->
-            <%  const users_who_favourited = [];%>
-            <%  for (const item of items) {%>
-              <% users_who_favourited.push(item.user_who_favourited_item);%>
-              <%  }%>
-              <%  for (const user of users_who_favourited) {%>
-              <%  if (users_who_favourited.includes(userId)){%>
+            <!-- Favourite Heart  -->
+            <% const users_who_favourited = [];%> <% for (const item of items)
+            {%> <% users_who_favourited.push(item.user_who_favourited_item);%>
+            <% }%> <% for (const user of users_who_favourited) {%> <% if
+            (users_who_favourited.includes(userId)){%>
 
-                <form class="favHeart" action="/users/id/favourites/<%= items[0].items_id %>" method="POST">
-                  <i class="fa-solid fa-heart favourited"></i>
-                </form>
-               <% break %>
-             <% } else {%>
-              <form class="favHeart" action="/users/id/favourites/<%= items[0].items_id %>" method="POST">
-                <i class="fa-solid fa-heart"></i>
-              </form>
-              <%   }%>
-              <%  }%>
+            <form
+              class="favHeart"
+              action="/users/id/favourites/<%= items[0].items_id %>"
+              method="POST"
+            >
+              <i class="fa-solid fa-heart favourited"></i>
+            </form>
+            <% break %> <% } else {%>
+            <form
+              class="favHeart"
+              action="/users/id/favourites/<%= items[0].items_id %>"
+              method="POST"
+            >
+              <i class="fa-solid fa-heart"></i>
+            </form>
+            <% }%> <% }%>
           </div>
         </div>
 
         <div class="right-container">
           <div class="top-right-container">
-            <p> <b>Price: </b> $<%= items[0].price_per_item / 100 %> </p>
-            <p id="timeAgo"> <b>Posted:</b> <%=  (items[0].posted_at).toISOString().slice(0, 10); %></p>
+            <p><b>Price: </b> $<%= items[0].price_per_item / 100 %></p>
+            <p id="timeAgo">
+              <b>Posted:</b> <%= (items[0].posted_at).toISOString().slice(0,
+              10); %>
+            </p>
           </div>
 
-           <p> <b> Quantity:</b> <%= items[0].quantity %></p>
-           <p> <b> Description: </b> <%= items[0].description %> </p>
-           <p> <b> Seller Name: </b> <%= items[0].name %>  </p>
-           <p> <b> Seller Phone Number:</b> <%= items[0].phone_number %> </p>
-           <p><b> Seller Email: </b> <%= items[0].email %>
-            <a href="mailto:<%= items[0].email%>?subject=Pokemon Black Market Listing"><i class="email-icon fa-regular fa-envelope"></i></a>
-           </p>
+          <p><b> Quantity:</b> <%= items[0].quantity %></p>
+          <p><b> Description: </b> <%= items[0].description %></p>
+          <p><b> Seller Name: </b> <%= items[0].name %></p>
+          <p><b> Seller Phone Number:</b> <%= items[0].phone_number %></p>
+          <p>
+            <b> Seller Email: </b> <%= items[0].email %>
+            <a
+              href="mailto:<%= items[0].email%>?subject=Pokemon Black Market Listing"
+              ><i class="email-icon fa-regular fa-envelope"></i
+            ></a>
+          </p>
 
-           <!-- Send seller message  -->
-           <form class="msg-form" action="/users/id/messages/<%= items[0].items_id %>" method="POST">
-              <textarea name="message" class="form-control" id="message" rows="2" placeholder="Message to seller"></textarea>
-              <div class="my-2">
-                <button type="submit" class="msg-btn btn btn-primary mb-2">Send</button>
-              </div>
-            </form>
-            <div class="sent-prompt">Your message has been sent</div>
+          <!-- Send seller message  -->
+          <form
+            class="msg-form"
+            action="/users/id/messages/<%= items[0].items_id %>"
+            method="POST"
+          >
+            <textarea
+              name="message"
+              class="form-control"
+              id="message"
+              rows="2"
+              placeholder="Message to seller"
+            ></textarea>
+            <div class="my-2">
+              <button type="submit" class="msg-btn btn btn-primary mb-2">
+                Send
+              </button>
+            </div>
+          </form>
+          <div class="sent-prompt">Your message has been sent</div>
         </div>
-       </div>
+      </div>
     </main>
 
     <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

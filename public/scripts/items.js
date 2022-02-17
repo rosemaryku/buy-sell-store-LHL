@@ -17,11 +17,6 @@ $(() => {
     req.session["user_id"] = null;
   });
 
-  $(".logout-btn").on("click", function(event) {
-    (".logout-form").submit();
-    event.preventDefault();
-  })
-
 
 });
 
