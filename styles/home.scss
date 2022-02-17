@@ -33,9 +33,9 @@ section {
 
 
 .shrink-img {
-  width: 1em;
-  height: 1em;
-  margin-bottom: 0.2em;
+  width: 2em;
+  height: 2em;
+
 }
 
 
@@ -70,7 +70,9 @@ section {
   justify-content:center;
 }
 
-
+.navbar>.container-fluid.flex-end{
+  justify-content: flex-end;
+}
 .height-100 {
   height: 20em;
   width: 20em;
@@ -86,6 +88,11 @@ section {
 .horizontal-align {
   display: flex;
   justify-content: flex-start;
+}
+.horizontal-display {
+  display: flex;
+  flex-direction: row;
+
 }
 
 .search-container {
@@ -120,8 +127,13 @@ section {
 // }
 .text-wrap {
 
+  align-self: baseline;
+  justify-content: center;
   background-color: white;
   border-radius: 2em;
+  display:flex;
+  align-items: center;
+  flex-direction: row;
 }
 .text-date {
 
@@ -137,7 +149,7 @@ section {
   font-weight: 600;
   color:black;
 
-  align-self:center;
+
 
 }
 .text-med {
@@ -146,7 +158,7 @@ section {
   font-weight: 600;
   color:black;
 
-  align-self:center;
+
 
 }
 
@@ -170,16 +182,17 @@ section {
 }
 
 a.fixed {
-  width: 15em;
+  width: 20rem;
   background-color: $color-red;
   border-radius: 10px;
 
   margin: 1em;
   display: flex;
   align-items:center;
+  justify-content: center;
   flex-direction: column;
   text-decoration: none;
-  z-index: 0;
+
 }
 
 .left-right-padding {
@@ -229,7 +242,7 @@ div.col {
   }
 
   a.fixed {
-    width: 95%;
+    width: 15rem;
 
   }
   .center {
@@ -260,16 +273,22 @@ div.col {
     margin-right: 0.5em;
 
   }
+  .navbar>.container-fluid.flex-end{
+    justify-content: flex-start;
 
+  }
 
 }
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 655px) {
   a.fixed {
-    width: 80%;
+    width: 13rem;
     justify-content: center;
     align-items: center;
 
+  }
 
+  .navbar>.container-fluid.flex-end{
+    justify-content: flex-start;
   }
 .text {
     font-size: 0.8em;
@@ -292,6 +311,7 @@ div.col {
     border-radius: 0.3rem;
   }
   .row.sized>* {
+    width: 15em;
     padding-right: 0;
     padding-left: 0;
   }
@@ -299,9 +319,10 @@ div.col {
     padding: 1em;
   }
   ul.navbar-nav.ms-auto.force {
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+
+
     margin: 0;
   }
   .container.center {

@@ -103,15 +103,15 @@
         <div class="col">
 
           <a class="fixed left-right-padding top-bottom-padding " href="items/<%=items[i].id%>">
-            <div class="card-header text-names"><%= items[i].title %></div>
+            <div class="card-header text-names "><%= items[i].title %></div>
 
-            <img class="rounded mx-auto d-block featured-img"
+            <img class="mx-auto d-block featured-img"
             src=<%= items[i].picture_url %>
             alt=<%= items[i].title %>
             >
-            <div class="text-wrap left-right-padding">
-              <span class="text-sm">
-                Posted on:
+            <div class=" text-wrap left-right-padding featured-img ">
+              <span class="text-med">
+                Posted: &nbsp;
               </span>
               <span class="text-med">
                 <%= moment(items[i].posted_at).subtract(10, 'days').format('ll') %>
@@ -121,11 +121,11 @@
         </div>
       <% } %>
     </div>
-</main>
-<%- include('partials/footer') %>
+  </main>
+
+  <%- include('partials/footer') %>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
 
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
