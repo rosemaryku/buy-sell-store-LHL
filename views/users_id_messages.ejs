@@ -38,7 +38,6 @@
     <% for(var i=0; i<messages.length; i++) {%>
     <div class="messages-container darker">
       <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="Avatar" class="right">
-      <span><%= messages[i].user_id%></span>
       <p><%= messages[i].user_message%></p>
       <span class="time-left"><%=messages[i].sent_at%></span>
     </div>
